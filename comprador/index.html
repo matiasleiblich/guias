@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guía del Comprador — Matías Leiblich</title>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MC47CJF0VL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MC47CJF0VL');
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f4f0;color:#0b0b0b;font-size:13px;line-height:1.6}
+
+/* PORTADA */
+.portada{background:#0d1b2e;color:#fff;padding:0;position:relative;overflow:hidden}
+.portada-img-wrap{position:relative;height:280px}
+.portada-img-wrap img{width:100%;height:280px;object-fit:cover;object-position:center 30%;display:block;opacity:.35;filter:sepia(.3) brightness(.8)}
+.portada-img-wrap::after{content:'';position:absolute;top:0;left:0;right:0;height:280px;background:linear-gradient(to bottom,#0d1b2e 0%,transparent 40%,#0d1b2e 100%)}
+.portada-content{padding:32px 56px 0;position:relative;z-index:2;margin-top:-90px}
+.portada-logo-row{margin-bottom:28px}
+.portada-eyebrow{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#6b9fff;margin-bottom:12px;font-weight:500}
+.portada-titulo{font-size:42px;font-weight:300;color:#f0f1f3;line-height:1.1;margin-bottom:6px}
+.portada-titulo strong{font-weight:700;color:#fff}
+.portada-subtitulo{font-size:14px;color:#9ca3af;margin-bottom:36px;max-width:560px;line-height:1.55}
+.portada-pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid #2a3a50;border-radius:10px;overflow:hidden;margin-bottom:0}
+.portada-paso{padding:14px 16px;border-right:1px solid #2a3a50;text-align:center}
+.portada-paso:last-child{border-right:none}
+.portada-paso-num{font-size:20px;font-weight:700;color:#1a7aff;line-height:1}
+.portada-paso-lbl{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-top:3px;line-height:1.3}
+.portada-footer{padding:24px 56px;border-top:1px solid #2a3a50;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:32px}
+.portada-autor{display:flex;align-items:center;gap:14px}
+.portada-autor-info strong{color:#f0f1f3;font-size:14px;display:block}
+.portada-autor-info span{color:#9ca3af;font-size:11px}
+.portada-tags{display:flex;gap:8px;flex-wrap:wrap}
+.portada-tag{font-size:10px;color:#6b9fff;background:#1a7aff11;padding:4px 12px;border-radius:20px;border:1px solid #1a7aff33}
+
+/* SECCIONES */
+.seccion{padding:36px 56px;border-bottom:1px solid #e1e0d9}
+.seccion:last-child{border-bottom:none}
+.seccion-blanca{background:#fff}
+.sec-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px}
+.sec-num{font-size:11px;font-weight:600;letter-spacing:2px;color:#1a7aff;background:#1a7aff11;padding:4px 10px;border-radius:20px;white-space:nowrap;margin-top:3px;border:1px solid #1a7aff22;flex-shrink:0}
+.sec-titulo{font-size:20px;font-weight:300;color:#0b0b0b;line-height:1.2}
+.sec-titulo strong{font-weight:700}
+.sec-desc{font-size:12px;color:#52514e;margin-top:4px;line-height:1.6}
+
+/* PASOS (proceso) */
+.pasos-list{display:flex;flex-direction:column;gap:0}
+.paso-item{display:grid;grid-template-columns:56px 1fr;gap:0;border:0.5px solid #e1e0d9;border-radius:8px;overflow:hidden;margin-bottom:8px;background:#fff}
+.paso-num-col{background:#1a7aff;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#fff;padding:16px 0;flex-shrink:0}
+.paso-body{padding:14px 18px}
+.paso-titulo{font-size:13px;font-weight:700;color:#0b0b0b;margin-bottom:3px}
+.paso-desc{font-size:11px;color:#52514e;line-height:1.6}
+
+/* ALERTAS */
+.alert{border-radius:8px;padding:14px 18px;margin-bottom:12px;display:flex;gap:12px;align-items:flex-start}
+.a-azul{background:#e6f1fb;border:0.5px solid #b5d4f4}
+.a-amarillo{background:#fff8e1;border:0.5px solid #f0c040}
+.a-verde{background:#edf7f1;border:0.5px solid #9fd4b6}
+.a-rojo{background:#fdf0f0;border:0.5px solid #e8b4b4}
+.a-gris{background:#f5f4f0;border:0.5px solid #d3d1c7}
+.a-gold{background:#fdf6e3;border:0.5px solid #c9a84c44}
+.alert-ico{font-size:17px;flex-shrink:0;margin-top:1px}
+.alert-titulo{font-size:12px;font-weight:600;margin-bottom:3px}
+.a-azul .alert-titulo{color:#1F4E79}
+.a-amarillo .alert-titulo{color:#7d5a00}
+.a-verde .alert-titulo{color:#1a7a4a}
+.a-rojo .alert-titulo{color:#c0392b}
+.a-gris .alert-titulo{color:#52514e}
+.a-gold .alert-titulo{color:#7d5a00}
+.alert-body{font-size:12px;color:#52514e;line-height:1.65}
+
+/* COLUMNAS */
+.col2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.col3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px}
+
+/* TARJETAS */
+.card{background:#fff;border:0.5px solid #e1e0d9;border-radius:8px;padding:16px 18px}
+.card-titulo{font-size:12px;font-weight:700;color:#0b0b0b;margin-bottom:8px}
+.card-desc{font-size:11px;color:#52514e;line-height:1.6}
+
+/* LISTA */
+.lista-check{list-style:none;padding:0;margin:0}
+.lista-check li{font-size:12px;color:#52514e;padding:5px 0 5px 22px;position:relative;border-bottom:0.5px solid #f0efea;line-height:1.5}
+.lista-check li:last-child{border-bottom:none}
+.lista-check li::before{content:'✓';position:absolute;left:0;color:#1a7aff;font-weight:700;font-size:11px}
+.lista-x li::before{content:'✗';color:#c0392b}
+
+/* GASTOS TABLE */
+.tabla{width:100%;border-collapse:collapse;font-size:11px;margin-top:12px}
+.tabla th{background:#f5f4f0;color:#52514e;font-weight:600;padding:8px 12px;border-bottom:0.5px solid #e1e0d9;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.5px}
+.tabla td{padding:8px 12px;border-bottom:0.5px solid #f0efea;vertical-align:top}
+.tabla tr:last-child td{border-bottom:none}
+.tabla tr:hover td{background:#fafaf8}
+.zona-tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600}
+.z-caba{background:#e3f2fd;color:#0d47a1}
+.z-gba{background:#e8f5e9;color:#1b5e20}
+
+.sep{height:0.5px;background:#e1e0d9;margin:20px 0}
+
+/* TIMELINE PROCESO */
+.timeline{position:relative;padding-left:32px;margin:16px 0}
+.timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,#1a7aff,#c9a84c)}
+.tl-item{position:relative;margin-bottom:16px}
+.tl-item:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:-26px;top:3px;width:12px;height:12px;border-radius:50%;background:#1a7aff;border:2px solid #fff;box-shadow:0 0 0 2px #1a7aff}
+.tl-titulo{font-size:12px;font-weight:700;color:#0b0b0b;margin-bottom:3px}
+.tl-desc{font-size:11px;color:#52514e;line-height:1.6}
+
+/* PREGUNTAS FILTRO */
+.pregunta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+.preg-card{background:#fff;border:0.5px solid #e1e0d9;border-radius:8px;padding:12px 14px}
+.preg-q{font-size:11px;font-weight:700;color:#1F4E79;margin-bottom:4px}
+.preg-a{font-size:11px;color:#52514e;line-height:1.5}
+
+/* KPIs */
+.kpi-grid{display:grid;gap:8px;margin-bottom:16px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.kpi{background:#fff;border:0.5px solid #e1e0d9;border-radius:8px;padding:14px 18px}
+.kpi-label{font-size:10px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;color:#898781;margin-bottom:4px}
+.kpi-val{font-size:22px;font-weight:700;color:#0b0b0b;line-height:1}
+.kpi-note{font-size:10px;color:#b4b2a9;margin-top:4px}
+
+/* CONTACTO */
+.contacto-page{background:#0d1b2e;color:#fff;padding:48px 56px}
+.contacto-hero{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;margin-bottom:40px;padding-bottom:36px;border-bottom:1px solid #2a3a50}
+.contacto-nombre{font-size:26px;font-weight:700;color:#fff;margin-bottom:4px}
+.contacto-titulo{font-size:13px;color:#6b9fff;margin-bottom:10px;letter-spacing:.5px}
+.contacto-bio{font-size:12px;color:#9ca3af;line-height:1.7;max-width:540px}
+.contacto-redes{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.red-btn{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:500;padding:7px 14px;border-radius:20px;border:1px solid #2a3a50;color:#9ca3af;text-decoration:none}
+.contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
+.contacto-card{background:#0f2440;border:1px solid #2a3a50;border-radius:10px;padding:18px 20px}
+.contacto-card-ico{font-size:20px;margin-bottom:8px}
+.contacto-card-titulo{font-size:13px;font-weight:600;color:#f0f1f3;margin-bottom:5px}
+.contacto-card-desc{font-size:11px;color:#6b7280;line-height:1.6;margin-bottom:10px}
+.contacto-links{display:flex;flex-direction:column;gap:5px}
+.contacto-link{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;color:#6b9fff;text-decoration:none;padding:6px 12px;background:#1a7aff11;border:1px solid #1a7aff22;border-radius:6px}
+.contacto-link-arrow{font-size:10px;margin-left:auto}
+.contacto-contacto{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:28px}
+.contacto-dato{background:#0f2440;border:1px solid #2a3a50;border-radius:8px;padding:12px 16px}
+.contacto-dato-label{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#4b5a6e;margin-bottom:5px}
+.contacto-dato-val{font-size:12px;font-weight:500;color:#6b9fff}
+
+/* FOOTER */
+.doc-footer{background:#0d1b2e;color:#9ca3af;padding:24px 56px;font-size:11px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.doc-footer strong{color:#f0f1f3}
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="portada">
+  <div class="portada-img-wrap">
+    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&q=80" 
+         onerror="this.style.display='none'"
+         alt="Propiedad">
+  </div>
+  <div class="portada-content">
+    <div class="portada-logo-row">
+      <img src="https://raw.githubusercontent.com/matiasleiblich/informes/main/IMG/logoml.png" alt="Matías Leiblich" style="height:48px;object-fit:contain">
+    </div>
+    <div class="portada-eyebrow">Guía práctica · Real Estate · 2026</div>
+    <div class="portada-titulo">Guía del<br><strong>Comprador</strong></div>
+    <div class="portada-subtitulo">Todo lo que necesitás saber para comprar tu próxima propiedad: desde la búsqueda hasta la escritura, paso a paso y sin sorpresas.</div>
+    <div class="portada-pasos">
+      <div class="portada-paso"><div class="portada-paso-num">8</div><div class="portada-paso-lbl">Pasos del proceso</div></div>
+      <div class="portada-paso"><div class="portada-paso-num">3</div><div class="portada-paso-lbl">Portales principales</div></div>
+      <div class="portada-paso"><div class="portada-paso-num">~9%</div><div class="portada-paso-lbl">Gastos sobre precio</div></div>
+      <div class="portada-paso"><div class="portada-paso-num">5–8%</div><div class="portada-paso-lbl">Margen de negociación</div></div>
+    </div>
+  </div>
+  <div class="portada-footer">
+    <div class="portada-autor">
+      <img src="https://raw.githubusercontent.com/matiasleiblich/informes/main/IMG/Fotoportada.jpg" style="width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid #1a7aff55;flex-shrink:0">
+      <div class="portada-autor-info">
+        <strong>Matías Leiblich</strong>
+        <span>Ingeniero Civil · Real Estate</span>
+      </div>
+    </div>
+    <div class="portada-tags">
+      <span class="portada-tag">#GuíaDelComprador</span>
+      <span class="portada-tag">#RealEstate</span>
+      <span class="portada-tag">#matiasleiblich.com</span>
+    </div>
+  </div>
+</div>
+
+<!-- 01: PROCESO GENERAL -->
+<div class="seccion seccion-blanca">
+  <div class="sec-header">
+    <span class="sec-num">01</span>
+    <div>
+      <div class="sec-titulo">El proceso de compra de <strong>principio a fin</strong></div>
+      <div class="sec-desc">Comprar una propiedad tiene etapas bien definidas. Conocerlas de antemano te permite tomar mejores decisiones en cada momento y evitar errores costosos.</div>
+    </div>
+  </div>
+  <div class="pasos-list">
+    <div class="paso-item"><div class="paso-num-col">1</div><div class="paso-body"><div class="paso-titulo">Definición</div><div class="paso-desc">Antes de buscar, definí tu presupuesto real (incluyendo los gastos de compra), las características excluyentes de la propiedad y si necesitás vender primero para poder comprar.</div></div></div>
+    <div class="paso-item"><div class="paso-num-col">2</div><div class="paso-body"><div class="paso-titulo">Búsqueda en portales</div><div class="paso-desc">Zonaprop, Mercado Libre y Argenprop son los tres portales principales. Aprendé a usar los filtros avanzados para no perder el tiempo con propiedades que no cumplen tus requisitos.</div></div></div>
+    <div class="paso-item"><div class="paso-num-col">3</div><div class="paso-body"><div class="paso-titulo">Preguntas filtro y visitas</div><div class="paso-desc">Antes de coordinar una visita, hacé las preguntas clave al vendedor para no perder el tiempo. Una vez en la propiedad, chequeá los ítems técnicos más importantes.</div></div></div>
+    <div class="paso-item"><div class="paso-num-col">4</div><div class="paso-body"><div class="paso-titulo">Decisión de compra</div><div class="paso-desc">La propiedad perfecta no existe — hay que ordenar prioridades. Analizá las fortalezas y debilidades de cada candidata para tomar la mejor decisión posible.</div></div></div>
+    <div class="paso-item"><div class="paso-num-col">5</div><div class="paso-body"><div class="paso-titulo">Reserva</div><div class="paso-desc">Elegiste la propiedad. La reserva es el primer documento vinculante. El vendedor recibe el dinero condicionado a que se negocien exitosamente todas las variables.</div></div></div>
+    <div class="paso-item"><div class="paso-num-col">6</div><div class="paso-body"><div class="paso-titulo">Negociación</div><div class="paso-desc">El precio es solo una de las variables. También se negocian la forma de pago, el plazo de escritura, la posesión, el lugar de firma y la designación del escribano.</div></div></div>
+    <div class="paso-item"><div class="paso-num-col">7</div><div class="paso-body"><div class="paso-titulo">Gastos de compra</div><div class="paso-desc">Sobre el precio acordado, el comprador paga un conjunto de gastos (comisión, escribanía, gastos escriturarios, sellos) que en promedio representan entre el 8% y el 9% del valor.</div></div></div>
+    <div class="paso-item" style="background:#0d1b2e"><div class="paso-num-col" style="background:#c9a84c">8</div><div class="paso-body" style="background:#0d1b2e"><div class="paso-titulo" style="color:#fff">Escritura y felicidad</div><div class="paso-desc" style="color:#9ca3af">La escritura traslativa de dominio es el único instrumento que transmite la propiedad. Firmada la escritura, la propiedad es tuya.</div></div></div>
+  </div>
+</div>
+
+<!-- 02: DEFINICIÓN -->
+<div class="seccion">
+  <div class="sec-header">
+    <span class="sec-num">02</span>
+    <div>
+      <div class="sec-titulo">Paso 1: <strong>Definición</strong></div>
+      <div class="sec-desc">Antes de entrar a Zonaprop, tomarse el tiempo de planificar bien la búsqueda ahorra meses de frustración.</div>
+    </div>
+  </div>
+  <div class="col3">
+    <div class="card">
+      <div class="card-titulo">💰 Presupuesto real</div>
+      <div class="card-desc">El precio de compra no es tu único egreso. Sumá entre un 8% y 9% adicional para cubrir los gastos de la operación (comisión, escribanía, sellos). Tenés que tener ese dinero disponible además del precio de compra.</div>
+    </div>
+    <div class="card">
+      <div class="card-titulo">🏠 Características clave</div>
+      <div class="card-desc">Definí qué es excluyente: tipología, ubicación, superficie, dormitorios, cochera, baño. Separalos de lo deseable pero no imprescindible. Enfocate en lo que no podés resignar.</div>
+    </div>
+    <div class="card">
+      <div class="card-titulo">🔄 ¿Vendés para comprar?</div>
+      <div class="card-desc">Si necesitás vender tu propiedad primero, no gastes energía en visitas hasta tener una reserva firmada. Podés ir identificando candidatos, pero no avancés con visitas hasta tener certeza de fondos.</div>
+    </div>
+  </div>
+  <div class="alert a-gold">
+    <span class="alert-ico">⭐</span>
+    <div>
+      <div class="alert-titulo">Las características más importantes a definir antes de buscar</div>
+      <div class="alert-body">
+        <strong>Tipología</strong> (depto, PH, casa) · <strong>Ubicación</strong> (barrio o radio) · <strong>Superficie</strong> mínima · <strong>Ambientes</strong> · <strong>Cochera</strong> (si/no) · <strong>Baños</strong> · <strong>Balcón/patio</strong> · <strong>Antigüedad</strong> · Orientación · Estado de mantenimiento · Apto profesional · Piso alto o bajo
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 03: PORTALES -->
+<div class="seccion seccion-blanca">
+  <div class="sec-header">
+    <span class="sec-num">03</span>
+    <div>
+      <div class="sec-titulo">Paso 2: <strong>Búsqueda en portales</strong></div>
+      <div class="sec-desc">Zonaprop concentra la mayor parte del tráfico en CABA y GBA. Usarlo bien hace una diferencia enorme en la calidad de tu búsqueda.</div>
+    </div>
+  </div>
+  <div class="col2" style="margin-bottom:20px">
+    <div>
+      <div class="card" style="margin-bottom:10px">
+        <div class="card-titulo">📋 Los filtros avanzados que pocos usan</div>
+        <ul class="lista-check" style="margin-top:8px">
+          <li><strong>Superficie cubierta y total</strong> — definí rango mínimo y máximo. A veces los m² publicados incluyen baulera o cochera.</li>
+          <li><strong>Fecha de publicación</strong> — empezá con propiedades de menos de 45 días. Las que llevan más de un año suelen tener propietarios que ya no quieren vender.</li>
+          <li><strong>Precio mínimo y máximo</strong> — evitás las de "consultar precio". Los valores publicados no incluyen los gastos.</li>
+          <li><strong>Ver mapa</strong> — delimitar con el mouse la zona exacta donde querés buscar.</li>
+          <li><strong>Comodidades</strong> — pileta, parrilla, gimnasio, etc.</li>
+          <li><strong>Características</strong> — apto crédito, apto profesional, etc.</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="card-titulo">💡 Tips de búsqueda</div>
+        <div class="card-desc" style="margin-bottom:10px">Los márgenes de negociación promedio están entre el 5% y el 8%, por lo que podés buscar hasta un 8% por encima de tu presupuesto real en el filtro de precio.</div>
+        <div class="card-desc" style="margin-bottom:10px">Recordá que los <strong>ambientes</strong> se cuentan como dormitorios + 1 (el living). Si buscás 2 dormitorios, filtrá por 3 ambientes.</div>
+        <div class="card-desc">Guardá la búsqueda para recibir alertas de nuevas propiedades que cumplan tus criterios. Armá una planilla para registrar tus candidatos y poder compararlos.</div>
+      </div>
+    </div>
+  </div>
+  <div class="alert a-azul">
+    <span class="alert-ico">💡</span>
+    <div>
+      <div class="alert-titulo">Portales principales: Zonaprop, Mercado Libre, Argenprop</div>
+      <div class="alert-body">No todas las propiedades están en los tres portales. Una búsqueda completa implica revisar los tres, aunque Zonaprop suele concentrar la mayor parte de la oferta. Una vez que tengas tus finalistas, es hora de coordinar las visitas.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 04: VISITAS -->
+<div class="seccion">
+  <div class="sec-header">
+    <span class="sec-num">04</span>
+    <div>
+      <div class="sec-titulo">Paso 3: <strong>Preguntas filtro y visitas</strong></div>
+      <div class="sec-desc">Antes de ir a ver una propiedad, hay preguntas que te ahorran tiempo y evitan sorpresas desagradables.</div>
+    </div>
+  </div>
+  <div style="font-size:12px;font-weight:600;color:#52514e;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px">Preguntas a hacer ANTES de visitar</div>
+  <div class="pregunta-grid">
+    <div class="preg-card"><div class="preg-q">¿La propiedad está bien de papeles?</div><div class="preg-a">Verificá si hay sucesión, inhibición o algún trámite pendiente. Preguntá si está lista para escriturar o para "escritura rápida" de 15 días.</div></div>
+    <div class="preg-card"><div class="preg-q">¿Hay inquilinos?</div><div class="preg-a">Si los hay, necesitás saber si el contrato tiene cláusula de venta y cuándo se desocuparía la propiedad. Tiene que figurar en la reserva.</div></div>
+    <div class="preg-card"><div class="preg-q">¿Es con reubicación?</div><div class="preg-a">Si el dueño necesita encontrar otra propiedad para mudarse, reservarla implica 30–45 días de incertidumbre. Es importante saberlo antes.</div></div>
+    <div class="preg-card"><div class="preg-q">¿Cuál es la liquidación de expensas?</div><div class="preg-a">Pedí el monto de las últimas expensas, separando ordinarias de extraordinarias. También si hay juicios en curso en el consorcio.</div></div>
+    <div class="preg-card"><div class="preg-q">¿Es últimos piso?</div><div class="preg-a">Si buscás piso alto, verificalo. El último piso suele tener humedad y ser más caluroso — muchas veces no figura en el aviso.</div></div>
+    <div class="preg-card"><div class="preg-q">¿Es apto profesional?</div><div class="preg-a">Si lo necesitás, preguntá si el edificio es apto profesional por reglamento de copropiedad y si se permite alquiler temporal.</div></div>
+  </div>
+  <div style="font-size:12px;font-weight:600;color:#52514e;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;margin-top:4px">Qué revisar DURANTE la visita</div>
+  <div class="col2">
+    <ul class="lista-check">
+      <li>Mantenimiento general del edificio (hall, escaleras, cochera, sala de máquinas)</li>
+      <li>Ascensores: estado, cantidad en relación a las unidades</li>
+      <li>Humedades: accidentales, por capilaridad, por condensación o por filtración</li>
+      <li>Tablero eléctrico: antigüedad y capacidad</li>
+      <li>Estado de baños y cocina — caños de plomo, grifería</li>
+      <li>Aberturas: estado y tipo (DVH es muy valorado)</li>
+      <li>Ventilación en baños (ventana al exterior, no solo extractor)</li>
+    </ul>
+    <ul class="lista-check">
+      <li>Dimensiones reales de los dormitorios (llevar medidor)</li>
+      <li>Metros por escritura (pueden diferir de los publicados)</li>
+      <li>Orientación (norte y variantes es lo más buscado)</li>
+      <li>Calefacción: tipo y estado (losa radiante, AA, estufa)</li>
+      <li>Terraza: accesibilidad y estado de mantenimiento</li>
+      <li>Reglamento de copropiedad y ABL (pedí la última boleta)</li>
+      <li>Construcción en edificios vecinos que pueda afectar luz o vistas</li>
+    </ul>
+  </div>
+  <div class="alert a-amarillo" style="margin-top:8px">
+    <span class="alert-ico">⚠️</span>
+    <div>
+      <div class="alert-titulo">Visitá la propiedad en distintos momentos</div>
+      <div class="alert-body">Te recomendamos visitar cada finalista en el "mejor" momento (buena luz, sin tráfico) y en el "peor" (hora de poco sol, tráfico pesado, si da a una avenida). Un mismo departamento puede verse muy distinto en cada uno. Si detectás humedades, llevá un profesional antes de avanzar.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 05: RESERVA -->
+<div class="seccion seccion-blanca">
+  <div class="sec-header">
+    <span class="sec-num">05</span>
+    <div>
+      <div class="sec-titulo">Pasos 4 y 5: <strong>Decisión y reserva</strong></div>
+      <div class="sec-desc">La propiedad perfecta casi nunca existe. El objetivo es encontrar la mejor disponible dentro de tu presupuesto y tus prioridades — y luego reservarla correctamente.</div>
+    </div>
+  </div>
+  <div class="col2">
+    <div>
+      <div class="card" style="height:100%">
+        <div class="card-titulo">🎯 Cómo tomar la decisión</div>
+        <div class="card-desc" style="margin-bottom:10px">Usá un análisis FODA para cada finalista: anotá fortalezas, debilidades, oportunidades y amenazas. Esto te ayuda a separar lo objetivo de lo emocional.</div>
+        <div class="card-desc" style="margin-bottom:10px">Hazte dos preguntas clave: <strong>¿dónde vas a ser feliz viviendo?</strong> y <strong>¿en qué momento de tu vida estás?</strong> Las respuestas ordenan las prioridades.</div>
+        <div class="card-desc">Si estás entre dos opciones y una tiene reubicación o inquilinos, la que no tiene esa complicación suele ser la mejor elección.</div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="card-titulo">📋 El proceso de reserva</div>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-titulo">Reserva de la propiedad</div><div class="tl-desc">Se firman 3 copias. El corredor debe entregar escritura, DNIs, expensas, ABL, informes de dominio e inhibición (y plano, reglamento, declaratoria de herederos si aplica).</div></div>
+          <div class="tl-item"><div class="tl-dot" style="background:#f28e2b;box-shadow:0 0 0 2px #f28e2b"></div><div class="tl-titulo">Negociación</div><div class="tl-desc">Entre la reserva y su aceptación se negocian todas las variables, no solo el precio.</div></div>
+          <div class="tl-item"><div class="tl-dot" style="background:#1a7a4a;box-shadow:0 0 0 2px #1a7a4a"></div><div class="tl-titulo">Aceptación y refuerzo</div><div class="tl-desc">El vendedor firma. Se pide el refuerzo (5%–10% del precio de cierre). Una vez firmado, ninguna de las partes puede retirarse sin perder el monto entregado.</div></div>
+          <div class="tl-item"><div class="tl-dot" style="background:#c9a84c;box-shadow:0 0 0 2px #c9a84c"></div><div class="tl-titulo">Boleto o cesión de derechos</div><div class="tl-desc">Etapa intermedia opcional. Tu escribano debe hacer el estudio de títulos antes de firmar cualquier boleto.</div></div>
+          <div class="tl-item"><div class="tl-dot" style="background:#c0392b;box-shadow:0 0 0 2px #c0392b"></div><div class="tl-titulo">Escritura traslativa de dominio</div><div class="tl-desc">El acto donde el escribano, ante ambas partes, instrumenta la venta. Es el único documento que transmite el dominio de la propiedad.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 06: NEGOCIACIÓN -->
+<div class="seccion">
+  <div class="sec-header">
+    <span class="sec-num">06</span>
+    <div>
+      <div class="sec-titulo">Paso 6: <strong>Negociación</strong></div>
+      <div class="sec-desc">El precio es la variable más discutida, pero no la única. Hay muchos otros aspectos que pueden hacer o deshacer una operación.</div>
+    </div>
+  </div>
+  <div class="col3">
+    <div class="card"><div class="card-titulo">💵 Precio y moneda</div><div class="card-desc">En general las transacciones son en dólares. El margen de negociación promedio está entre el 5% y el 8% del precio publicado. Las propiedades bien posicionadas negocian menos.</div></div>
+    <div class="card"><div class="card-titulo">💳 Forma de pago</div><div class="card-desc">¿Efectivo o transferencia? ¿Hay financiación? ¿Qué porcentaje se entrega antes de la escritura? Todas estas variables se acuerdan en la reserva.</div></div>
+    <div class="card"><div class="card-titulo">📍 Lugar de firma</div><div class="card-desc">En general lo elige el vendedor. Si hay crédito hipotecario, la firma es en la sucursal del banco — no se puede negociar esta variable.</div></div>
+    <div class="card"><div class="card-titulo">📅 Fechas tentativas</div><div class="card-desc">Refuerzo, boleto y escritura. No siempre se cumplen, pero es importante definirlas desde el principio para que todas las partes las tengan en mente.</div></div>
+    <div class="card"><div class="card-titulo">🏠 Posesión</div><div class="card-desc">¿Cuándo tomás posesión? Puede ser en la escritura o antes. Si es antes, suele hacerse con un boleto a aproximadamente el 70% del precio acordado.</div></div>
+    <div class="card"><div class="card-titulo">✏️ Designación del escribano</div><div class="card-desc">Lo suele elegir el comprador, ya que es quien debe indicar si la propiedad puede comprarse o no. Pedile una proforma de gastos antes de cerrar.</div></div>
+  </div>
+  <div class="alert a-azul">
+    <span class="alert-ico">📋</span>
+    <div>
+      <div class="alert-titulo">Otras variables importantes a negociar</div>
+      <div class="alert-body">
+        <strong>Impuesto de sellos</strong> — en CABA es 3,5% y en GBA es 2% del valor escriturado. En la mayoría de los casos se acuerda pagar 50/50 entre comprador y vendedor. En CABA hay exención para primera vivienda hasta cierto monto.<br><br>
+        <strong>Inventario</strong> — acordá qué queda en la propiedad y qué se lleva el vendedor. En general quedan: aires acondicionados, estufas, cocina y artefactos de baño.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 07: GASTOS -->
+<div class="seccion seccion-blanca">
+  <div class="sec-header">
+    <span class="sec-num">07</span>
+    <div>
+      <div class="sec-titulo">Paso 7: <strong>Gastos de compra</strong></div>
+      <div class="sec-desc">Sobre el precio acordado, el comprador carga con un conjunto de gastos que conviene tener previstos desde el comienzo de la búsqueda.</div>
+    </div>
+  </div>
+  <div class="alert a-verde" style="margin-bottom:20px">
+    <span class="alert-ico">🧮</span>
+    <div>
+      <div class="alert-titulo">Calculá tus gastos de compra antes de cerrar</div>
+      <div class="alert-body">Ingresá el valor de la propiedad y la zona (CABA o GBA) para obtener una estimación de todos los gastos involucrados: comisión, escribanía, sellos y gastos escriturarios. El resumen de referencia lo encontrás a continuación.<br><br>
+        <a href="https://matiasleiblich.com/calculadora-inmobiliaria" target="_blank" style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;color:#1a7a4a;text-decoration:none;padding:7px 14px;background:#edf7f1;border:0.5px solid #9fd4b6;border-radius:6px;margin-top:4px">🧮 Calculadora de gastos → matiasleiblich.com/calculadora-inmobiliaria</a>
+      </div>
+    </div>
+  </div>
+  <div class="col2">
+    <div>
+      <div style="font-size:11px;font-weight:600;color:#1a7a4a;background:#edf7f1;border:0.5px solid #9fd4b6;padding:6px 12px;border-radius:6px;margin-bottom:8px;display:inline-block">GBA (Provincia de Buenos Aires)</div>
+      <table class="tabla">
+        <thead><tr><th>Concepto</th><th>Quién paga</th><th>Monto</th></tr></thead>
+        <tbody>
+          <tr><td>Comisión inmobiliaria</td><td>Comprador</td><td>3% + IVA</td></tr>
+          <tr><td>Honorarios escribanía</td><td>Comprador</td><td>1% + IVA</td></tr>
+          <tr><td>Gastos escriturarios</td><td>Comprador</td><td>1,5% – 2%</td></tr>
+          <tr><td>Sellos (parte compradora)</td><td>Comprador / 50-50</td><td>2% (sobre valor en pesos)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div style="font-size:11px;font-weight:600;color:#0d47a1;background:#e3f2fd;border:0.5px solid #b5d4f4;padding:6px 12px;border-radius:6px;margin-bottom:8px;display:inline-block">CABA (Ciudad Autónoma de Buenos Aires)</div>
+      <table class="tabla">
+        <thead><tr><th>Concepto</th><th>Quién paga</th><th>Monto</th></tr></thead>
+        <tbody>
+          <tr><td>Comisión inmobiliaria</td><td>Comprador</td><td>4% + IVA</td></tr>
+          <tr><td>Honorarios escribanía</td><td>Comprador</td><td>1% + IVA</td></tr>
+          <tr><td>Gastos escriturarios</td><td>Comprador</td><td>1% – 1,5%</td></tr>
+          <tr><td>Sellos (parte compradora)</td><td>Comprador / 50-50</td><td>3,5% — exención para primera vivienda</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="alert a-rojo">
+    <span class="alert-ico">⚠️</span>
+    <div>
+      <div class="alert-titulo">Pedí siempre la proforma de gastos a tu escribanía antes de cerrar</div>
+      <div class="alert-body">Los gastos escriturarios y honorarios de la escribanía pueden variar según el escribano y las particularidades de cada operación. Antes de firmar la reserva, pedile a tu escribano una estimación concreta para esa propiedad en particular. No uses solo el porcentaje como referencia.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 08: ESCRITURA -->
+<div class="seccion">
+  <div class="sec-header">
+    <span class="sec-num">08</span>
+    <div>
+      <div class="sec-titulo">Paso 8: <strong>Escritura</strong></div>
+      <div class="sec-desc">El acto final. El escribano, con ambas partes presentes, instrumenta la venta. Una vez firmada la escritura, la propiedad es tuya.</div>
+    </div>
+  </div>
+  <div class="col2">
+    <div class="card">
+      <div class="card-titulo">📋 Documentación que llevás el día de la escritura</div>
+      <ul class="lista-check" style="margin-top:8px">
+        <li>Escritura original (si no la entregaste antes en la escribanía)</li>
+        <li>DNI de cada propietario y de sus cónyuges</li>
+        <li>Últimas facturas y comprobantes de pago de todos los servicios</li>
+        <li>Llaves de la propiedad</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-titulo">💡 Tips para el día de la firma</div>
+      <div class="card-desc" style="margin-bottom:8px">Las operaciones en Argentina se realizan habitualmente en efectivo. Si el monto es importante, considerá utilizar una empresa verificadora de billetes para tener certeza sobre la autenticidad.</div>
+      <div class="card-desc">Tu escribano debe haber realizado el <strong>estudio de títulos</strong> previamente para confirmar que la propiedad puede comprarse sin inconvenientes. Si no lo hizo, pedíselo antes de la firma.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PÁGINA CONTACTO -->
+<div class="contacto-page">
+  <div class="contacto-hero">
+    <img src="https://raw.githubusercontent.com/matiasleiblich/informes/main/IMG/Fotoportada.jpg" style="width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid #1a7aff55;flex-shrink:0">
+    <div>
+      <div class="contacto-nombre">Matías Leiblich</div>
+      <div class="contacto-titulo">Ingeniero Civil · Real Estate</div>
+      <div class="contacto-bio">Soy Ingeniero Civil (UBA) y asesor en Real Estate. Acompaño a compradores y vendedores con una mirada técnica que va más allá del precio: análisis estructural de la propiedad, evaluación de estado real, comparación con el mercado y acompañamiento en cada etapa del proceso — desde la búsqueda hasta la escritura.</div>
+      <div class="contacto-redes">
+        <a class="red-btn" href="https://wa.me/5491161737552" target="_blank">📱 WhatsApp</a>
+        <a class="red-btn" href="mailto:matiasleiblich@deinmobiliarios.com" target="_blank">✉️ Mail</a>
+        <a class="red-btn" href="https://linkedin.com/in/matias-leiblich" target="_blank">💼 LinkedIn</a>
+        <a class="red-btn" href="https://www.instagram.com/tutemudas" target="_blank">📷 @tutemudas</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#4b5a6e;margin-bottom:14px;font-weight:600">Datos de contacto</div>
+  <div class="contacto-contacto">
+    <div class="contacto-dato">
+      <div class="contacto-dato-label">Teléfono / WhatsApp</div>
+      <a class="contacto-dato-val" href="https://wa.me/5491161737552" target="_blank" style="text-decoration:none">11-6173-7552</a>
+    </div>
+    <div class="contacto-dato">
+      <div class="contacto-dato-label">Email</div>
+      <a class="contacto-dato-val" href="mailto:matiasleiblich@deinmobiliarios.com" target="_blank" style="text-decoration:none;font-size:11px">matiasleiblich@deinmobiliarios.com</a>
+    </div>
+    <div class="contacto-dato">
+      <div class="contacto-dato-label">Web</div>
+      <a class="contacto-dato-val" href="https://matiasleiblich.com" target="_blank" style="text-decoration:none">matiasleiblich.com</a>
+    </div>
+  </div>
+
+  <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#4b5a6e;margin-bottom:14px;font-weight:600">¿Cómo puedo ayudarte?</div>
+  <div class="contacto-grid">
+    <div class="contacto-card">
+      <div class="contacto-card-ico">🔍</div>
+      <div class="contacto-card-titulo">Acompañamiento en tu búsqueda</div>
+      <div class="contacto-card-desc">Asesoramiento profesional con visión técnica en cada propiedad que visites — estado real, potencial, riesgos y posición frente al mercado.</div>
+      <div class="contacto-links">
+        <a class="contacto-link" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Estoy%20buscando%20una%20propiedad%20y%20quisiera%20recibir%20asesoramiento." target="_blank">
+          🔍 Iniciar búsqueda con asesoramiento <span class="contacto-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="contacto-card">
+      <div class="contacto-card-ico">🧮</div>
+      <div class="contacto-card-titulo">Calculadora de gastos</div>
+      <div class="contacto-card-desc">Estimá los gastos totales de tu compra — comisión, escribanía, sellos y gastos escriturarios — para CABA y GBA.</div>
+      <div class="contacto-links">
+        <a class="contacto-link" href="https://matiasleiblich.com/calculadora-inmobiliaria" target="_blank">
+          🧮 Abrir calculadora <span class="contacto-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="contacto-card">
+      <div class="contacto-card-ico">📊</div>
+      <div class="contacto-card-titulo">Informes de mercado</div>
+      <div class="contacto-card-desc">Análisis actualizados de precios, tiempo en el mercado y oferta activa por zona, basados en datos reales.</div>
+      <div class="contacto-links">
+        <a class="contacto-link" href="https://matiasleiblich.com/informes" target="_blank">
+          📊 Ver informes <span class="contacto-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="contacto-card">
+      <div class="contacto-card-ico">🏦</div>
+      <div class="contacto-card-titulo">¿Comprás con crédito BNA?</div>
+      <div class="contacto-card-desc">Todo lo que necesitás saber sobre los créditos UVA del Banco Nación: requisitos, etapas, cuotas y costos. Incluye simulador de cuotas.</div>
+      <div class="contacto-links">
+        <a class="contacto-link" href="https://matiasleiblich.com/guias/credito-BNA" target="_blank">
+          📖 Guía de crédito BNA <span class="contacto-link-arrow">→</span>
+        </a>
+        <a class="contacto-link" href="https://matiasleiblich.com/calculadora-inmobiliaria" target="_blank">
+          🧮 Simulador de cuotas BNA <span class="contacto-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2a3a50;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+    <div>
+      <div style="font-size:13px;font-weight:700;color:#f0f1f3">Matías Leiblich</div>
+      <div style="font-size:10px;color:#4b5a6e;margin-top:2px">Guía del Comprador · 2026</div>
+    </div>
+    <div style="font-size:10px;color:#4b5a6e;text-align:right">matiasleiblich.com</div>
+  </div>
+</div>
+
+<div class="doc-footer">
+  <div><strong>Matías Leiblich</strong> · Ingeniero Civil · Real Estate · matiasleiblich.com</div>
+  <div style="text-align:right;font-size:10px;color:#4b5563">Guía del Comprador · 2026 · Información orientativa — consultá a tu escribano ante cualquier duda legal</div>
+</div>
+
+</body>
+</html>

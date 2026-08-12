@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guía del Comprador con Crédito BNA · Matías Leiblich</title>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MC47CJF0VL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MC47CJF0VL');
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f4f0;color:#0b0b0b;font-size:13px;line-height:1.6}
+
+/* PORTADA */
+.portada{background:#0d1b2e;color:#fff;padding:0;position:relative;overflow:hidden}
+.portada-img-wrap{position:relative;height:280px}
+.portada-img-wrap img{width:100%;height:280px;object-fit:cover;object-position:center 40%;display:block;opacity:.35;filter:sepia(.3) brightness(.8)}
+.portada-img-overlay{position:absolute;top:0;left:0;right:0;height:280px;background:linear-gradient(to bottom,#0d1b2e 0%,transparent 40%,#0d1b2e 100%)}
+.portada-content{padding:40px 56px 0;position:relative;z-index:2;margin-top:-100px}
+.portada-logo-row{margin-bottom:32px}
+.portada-eyebrow{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#6b9fff;margin-bottom:14px;font-weight:500}
+.portada-titulo{font-size:38px;font-weight:300;color:#f0f1f3;line-height:1.1;margin-bottom:8px}
+.portada-titulo strong{font-weight:700;color:#fff}
+.portada-subtitulo{font-size:14px;color:#9ca3af;margin-bottom:36px;max-width:560px;line-height:1.5}
+
+.portada-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid #2a3a50;border-radius:10px;overflow:hidden;margin-bottom:0}
+.portada-meta-item{padding:18px 20px;border-right:1px solid #2a3a50}
+.portada-meta-item:last-child{border-right:none}
+.portada-meta-label{font-size:10px;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.portada-meta-val{font-size:20px;font-weight:700;color:#fff}
+.portada-meta-sub{font-size:10px;color:#6b7280;margin-top:2px}
+
+.portada-footer{padding:28px 56px;border-top:1px solid #2a3a50;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;position:relative;z-index:2}
+.portada-autor{display:flex;align-items:center;gap:14px}
+.portada-autor-info strong{color:#f0f1f3;font-size:14px;display:block}
+.portada-autor-info span{color:#9ca3af;font-size:11px}
+.portada-tags{display:flex;gap:8px;flex-wrap:wrap}
+.portada-tag{font-size:10px;color:#6b9fff;background:#1a7aff11;padding:4px 12px;border-radius:20px;border:1px solid #1a7aff33}
+
+/* DISCLAIMER */
+.disclaimer{background:#fff8e1;border-bottom:2px solid #f0c040;padding:12px 56px;display:flex;align-items:center;gap:10px}
+.disclaimer-ico{font-size:16px;flex-shrink:0}
+.disclaimer-txt{font-size:11px;color:#7d5a00;line-height:1.5}
+
+/* ÍNDICE */
+.indice{background:#0d1b2e;padding:32px 56px}
+.indice-titulo{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#4b5a6e;margin-bottom:16px;font-weight:600}
+.indice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.indice-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid #2a3a50;border-radius:8px;text-decoration:none;transition:border-color .15s}
+.indice-item:hover{border-color:#4a7aaa}
+.indice-num{font-size:18px;font-weight:700;color:#1a7aff;flex-shrink:0;line-height:1}
+.indice-lbl{font-size:11px;font-weight:500;color:#9ca3af;line-height:1.3}
+
+/* SECCIONES */
+.seccion{padding:40px 56px;border-bottom:1px solid #e1e0d9}
+.seccion:last-child{border-bottom:none}
+.seccion-blanca{background:#fff}
+.sec-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px}
+.sec-num{font-size:11px;font-weight:600;letter-spacing:2px;color:#1a7aff;background:#1a7aff11;padding:4px 10px;border-radius:20px;white-space:nowrap;margin-top:3px;border:1px solid #1a7aff22}
+.sec-titulo{font-size:22px;font-weight:300;color:#0b0b0b;line-height:1.2}
+.sec-titulo strong{font-weight:700}
+.sec-desc{font-size:12px;color:#52514e;margin-top:5px;line-height:1.6;max-width:640px}
+
+/* KPIs */
+.kpi-grid{display:grid;gap:8px;margin-bottom:20px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.kpi{background:#fff;border:0.5px solid #e1e0d9;border-radius:8px;padding:14px 18px}
+.kpi-label{font-size:10px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;color:#898781;margin-bottom:4px}
+.kpi-val{font-size:24px;font-weight:700;color:#0b0b0b;line-height:1}
+.kpi-val.verde{color:#1a7a4a}
+.kpi-val.rojo{color:#c0392b}
+.kpi-val.azul{color:#1F4E79}
+.kpi-val.amarillo{color:#7d5a00}
+.kpi-note{font-size:10px;color:#b4b2a9;margin-top:4px}
+
+/* ALERTAS */
+.alert{border-radius:8px;padding:14px 18px;margin-bottom:12px;display:flex;gap:12px;align-items:flex-start}
+.a-rojo{background:#fdf0f0;border:0.5px solid #e8b4b4}
+.a-verde{background:#edf7f1;border:0.5px solid #9fd4b6}
+.a-azul{background:#e6f1fb;border:0.5px solid #b5d4f4}
+.a-amarillo{background:#fff8e1;border:0.5px solid #f0c040}
+.a-gris{background:#f5f4f0;border:0.5px solid #d3d1c7}
+.a-navy{background:#0d1b2e;border:0.5px solid #2a3a50}
+.alert-ico{font-size:17px;flex-shrink:0;margin-top:1px}
+.alert-titulo{font-size:12px;font-weight:600;margin-bottom:3px}
+.a-rojo .alert-titulo{color:#c0392b}
+.a-verde .alert-titulo{color:#1a7a4a}
+.a-azul .alert-titulo{color:#1F4E79}
+.a-amarillo .alert-titulo{color:#7d5a00}
+.a-gris .alert-titulo{color:#52514e}
+.a-navy .alert-titulo{color:#6b9fff}
+.alert-body{font-size:12px;color:#52514e;line-height:1.65}
+.a-navy .alert-body{color:#9ca3af}
+
+/* STEPS */
+.steps{display:flex;flex-direction:column;gap:0;margin-bottom:20px}
+.step{display:grid;grid-template-columns:56px 1fr;gap:0;position:relative}
+.step:not(:last-child)::before{content:'';position:absolute;left:27px;top:52px;bottom:0;width:2px;background:#e1e0d9;z-index:0}
+.step-num-wrap{display:flex;flex-direction:column;align-items:center;padding-top:12px;z-index:1}
+.step-num{width:36px;height:36px;border-radius:50%;background:#1a7aff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0}
+.step-body{background:#fff;border:0.5px solid #e1e0d9;border-radius:8px;padding:16px 18px;margin:8px 0 16px 0}
+.step-titulo{font-size:13px;font-weight:600;color:#0b0b0b;margin-bottom:4px}
+.step-desc{font-size:12px;color:#52514e;line-height:1.65}
+.step-tiempo{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:500;color:#1F4E79;background:#e6f1fb;border:0.5px solid #b5d4f4;border-radius:20px;padding:3px 10px;margin-top:8px}
+
+/* TABLA */
+.tabla{width:100%;border-collapse:collapse;font-size:11px;margin-top:12px}
+.tabla th{background:#f5f4f0;color:#52514e;font-weight:500;padding:7px 10px;border-bottom:0.5px solid #e1e0d9;text-align:left}
+.tabla td{padding:7px 10px;border-bottom:0.5px solid #f0efea;vertical-align:middle}
+.tabla tr:last-child td{border-bottom:none}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:500}
+.b-verde{background:#edf7f1;color:#1a7a4a}
+.b-rojo{background:#fdf0f0;color:#c0392b}
+.b-azul{background:#e6f1fb;color:#1F4E79}
+.b-amarillo{background:#fff8e1;color:#7d5a00}
+
+/* COMPARATIVA */
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.comp-card{border-radius:8px;padding:18px 20px}
+.comp-card.verde{background:#edf7f1;border:1px solid #9fd4b6}
+.comp-card.rojo{background:#fdf0f0;border:1px solid #e8b4b4}
+.comp-card-titulo{font-size:12px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.comp-card.verde .comp-card-titulo{color:#1a7a4a}
+.comp-card.rojo .comp-card-titulo{color:#c0392b}
+.comp-item{font-size:12px;color:#52514e;padding:5px 0;border-bottom:0.5px solid rgba(0,0,0,.06);display:flex;align-items:flex-start;gap:6px;line-height:1.5}
+.comp-item:last-child{border-bottom:none}
+
+/* CHECKLIST */
+.checklist{background:#fff;border:0.5px solid #e1e0d9;border-radius:8px;overflow:hidden;margin-bottom:16px}
+.checklist-hdr{background:#f5f4f0;padding:10px 16px;font-size:11px;font-weight:600;color:#52514e;letter-spacing:.5px;text-transform:uppercase;border-bottom:0.5px solid #e1e0d9}
+.checklist-body{padding:12px 16px;display:flex;flex-direction:column;gap:6px}
+.check-item{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#52514e;line-height:1.5}
+.check-ico{font-size:13px;flex-shrink:0;margin-top:1px}
+
+/* CONTACTO CTA */
+.cta-banner{background:#0d1b2e;padding:28px 56px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.cta-txt strong{color:#fff;font-size:15px;display:block;margin-bottom:4px}
+.cta-txt span{color:#9ca3af;font-size:12px}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:#1a7aff;color:#fff;font-size:12px;font-weight:600;padding:10px 20px;border-radius:8px;text-decoration:none;border:none;cursor:pointer;white-space:nowrap}
+.cta-btn.outline{background:transparent;border:1px solid #2a3a50;color:#9ca3af}
+
+/* GLOSARIO */
+.glosario-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.glosario-item{background:#fff;border:0.5px solid #e1e0d9;border-radius:8px;padding:12px 14px}
+.glosario-term{font-size:12px;font-weight:600;color:#1F4E79;margin-bottom:3px}
+.glosario-def{font-size:11px;color:#52514e;line-height:1.5}
+
+/* CONTACTO PAGE */
+.contacto-page{background:#0d1b2e;color:#fff;padding:56px}
+.contacto-hero{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid #2a3a50}
+.contacto-nombre{font-size:28px;font-weight:700;color:#fff;margin-bottom:4px}
+.contacto-titulo{font-size:13px;color:#6b9fff;margin-bottom:12px}
+.contacto-bio{font-size:12px;color:#9ca3af;line-height:1.7;max-width:560px}
+.contacto-redes{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.red-btn{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:500;padding:7px 14px;border-radius:20px;border:1px solid #2a3a50;color:#9ca3af;text-decoration:none}
+.contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px}
+.contacto-card{background:#0f2440;border:1px solid #2a3a50;border-radius:10px;padding:20px 22px}
+.contacto-card-ico{font-size:20px;margin-bottom:10px}
+.contacto-card-titulo{font-size:13px;font-weight:600;color:#f0f1f3;margin-bottom:6px}
+.contacto-card-desc{font-size:11px;color:#6b7280;line-height:1.6;margin-bottom:12px}
+.contacto-links{display:flex;flex-direction:column;gap:6px}
+.contacto-link{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;color:#6b9fff;text-decoration:none;padding:6px 12px;background:#1a7aff11;border:1px solid #1a7aff22;border-radius:6px}
+.contacto-link-arrow{font-size:10px;margin-left:auto}
+.contacto-contacto{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:32px}
+.contacto-dato{background:#0f2440;border:1px solid #2a3a50;border-radius:8px;padding:14px 16px}
+.contacto-dato-label{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#4b5a6e;margin-bottom:5px}
+.contacto-dato-val{font-size:12px;font-weight:500;color:#6b9fff}
+
+.sep{height:0.5px;background:#e1e0d9;margin:20px 0}
+.sec-label{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#898781;margin-bottom:12px}
+
+/* FOOTER */
+.doc-footer{background:#0d1b2e;color:#9ca3af;padding:28px 56px;font-size:11px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.doc-footer strong{color:#f0f1f3}
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="portada">
+  <div class="portada-img-wrap">
+    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&q=80" alt="Crédito hipotecario">
+    <div class="portada-img-overlay"></div>
+  </div>
+
+  <div class="portada-content">
+    <div class="portada-logo-row">
+      <img src="https://raw.githubusercontent.com/matiasleiblich/informes/main/IMG/logoml.png" alt="Matías Leiblich" style="height:48px;object-fit:contain">
+    </div>
+    <div class="portada-eyebrow">Guía del comprador · Crédito hipotecario · Agosto 2026</div>
+    <div class="portada-titulo">Crédito BNA<br><strong>Guía completa para compradores</strong></div>
+    <div class="portada-subtitulo">Todo lo que necesitás saber para navegar el proceso de un crédito hipotecario del Banco Nación: etapas, documentación, plazos, costos y decisiones clave.</div>
+
+    <div class="portada-meta">
+      <div class="portada-meta-item">
+        <div class="portada-meta-label">Etapas del proceso</div>
+        <div class="portada-meta-val">6</div>
+        <div class="portada-meta-sub">desde solicitud hasta escritura</div>
+      </div>
+      <div class="portada-meta-item">
+        <div class="portada-meta-label">Duración estimada</div>
+        <div class="portada-meta-val">3–4 meses</div>
+        <div class="portada-meta-sub">desde preaprobación</div>
+      </div>
+      <div class="portada-meta-item">
+        <div class="portada-meta-label">Banco presta hasta</div>
+        <div class="portada-meta-val">75%</div>
+        <div class="portada-meta-sub">del valor de la propiedad</div>
+      </div>
+      <div class="portada-meta-item">
+        <div class="portada-meta-label">Crédito en</div>
+        <div class="portada-meta-val">UVA</div>
+        <div class="portada-meta-sub">ajustado por inflación</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="portada-footer">
+    <div class="portada-autor">
+      <img src="https://raw.githubusercontent.com/matiasleiblich/informes/main/IMG/Fotoportada.jpg" style="width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid #1a7aff55;flex-shrink:0" alt="Matías Leiblich">
+      <div class="portada-autor-info">
+        <strong>Matías Leiblich</strong>
+        <span>Ingeniero Civil · Real Estate</span>
+      </div>
+    </div>
+    <div class="portada-tags">
+      <span class="portada-tag">#CréditoBNA</span>
+      <span class="portada-tag">#CréditoHipotecario</span>
+      <span class="portada-tag">#GuíaDelComprador</span>
+    </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <span class="disclaimer-ico">⚠️</span>
+  <div class="disclaimer-txt"><strong>Nota importante:</strong> Esta guía refleja las condiciones del crédito hipotecario BNA vigentes a agosto de 2026 en Capital Federal y Provincia de Buenos Aires. Las condiciones pueden variar. Verificá siempre en bna.com.ar o con un asesor antes de tomar decisiones. Esta guía es informativa y no constituye asesoramiento legal ni financiero oficial.</div>
+</div>
+
+<!-- ÍNDICE -->
+<div class="indice">
+  <div class="indice-titulo">El recorrido completo</div>
+  <div class="indice-grid">
+    <a class="indice-item" href="#etapa1">
+      <div class="indice-num">01</div>
+      <div class="indice-lbl">Cargar la solicitud</div>
+    </a>
+    <a class="indice-item" href="#etapa2">
+      <div class="indice-num">02</div>
+      <div class="indice-lbl">Buscar la propiedad</div>
+    </a>
+    <a class="indice-item" href="#etapa3">
+      <div class="indice-num">03</div>
+      <div class="indice-lbl">La reserva</div>
+    </a>
+    <a class="indice-item" href="#etapa4">
+      <div class="indice-num">04</div>
+      <div class="indice-lbl">Tasador y escribanía</div>
+    </a>
+    <a class="indice-item" href="#etapa5">
+      <div class="indice-num">05</div>
+      <div class="indice-lbl">Acuerdo definitivo</div>
+    </a>
+    <a class="indice-item" href="#etapa6">
+      <div class="indice-num">06</div>
+      <div class="indice-lbl">La escritura</div>
+    </a>
+  </div>
+</div>
+
+<!-- VISIÓN GENERAL -->
+<div class="seccion seccion-blanca">
+  <div class="sec-header">
+    <span class="sec-num">OVERVIEW</span>
+    <div>
+      <div class="sec-titulo">¿Cómo funciona el <strong>crédito UVA del BNA</strong>?</div>
+      <div class="sec-desc">Antes de entrar en el proceso paso a paso, conviene entender la lógica del crédito. Es un préstamo en pesos ajustado por inflación — lo que significa que tanto la cuota como el saldo de la deuda suben con el índice UVA.</div>
+    </div>
+  </div>
+
+  <div class="kpi-grid g4">
+    <div class="kpi">
+      <div class="kpi-label">Moneda del crédito</div>
+      <div class="kpi-val azul">Pesos UVA</div>
+      <div class="kpi-note">se convierten a USD el día de escritura</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Porcentaje máximo prestado</div>
+      <div class="kpi-val">75%</div>
+      <div class="kpi-note">cartera general — 90% sector público</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Plazo de búsqueda</div>
+      <div class="kpi-val">60 días</div>
+      <div class="kpi-note">desde la preaprobación para encontrar propiedad</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Tiempo total estimado</div>
+      <div class="kpi-val">3–4 meses</div>
+      <div class="kpi-note">desde preaprobación hasta escritura</div>
+    </div>
+  </div>
+
+  <div class="alert a-azul">
+    <span class="alert-ico">💡</span>
+    <div>
+      <div class="alert-titulo">Lo más importante que tenés que entender antes de arrancar</div>
+      <div class="alert-body">El banco te presta pesos. El día de la escritura, esos pesos se convierten a dólares al tipo de cambio oficial BNA del momento para pagarle al vendedor. Eso significa que el monto real en dólares que recibe el vendedor depende del tipo de cambio de ese día — y ese valor puede cambiar entre la preaprobación y la escritura. <strong>Siempre tené un margen de ahorro extra para cubrir posibles diferencias.</strong></div>
+    </div>
+  </div>
+
+  <div class="sep"></div>
+
+  <div class="sec-label">La decisión más importante: ¿con o sin CVS?</div>
+  <div class="alert a-gris" style="margin-bottom:12px">
+    <span class="alert-ico">📋</span>
+    <div>
+      <div class="alert-titulo" style="color:#0b0b0b">¿Qué es el CVS?</div>
+      <div class="alert-body">El CVS (Coeficiente de Variación Salarial) es una cláusula opcional que funciona como tope a tu cuota mensual: si la cuota sube más rápido que tu sueldo, el CVS limita cuánto pagás ese mes. La diferencia no desaparece — se suma al capital pendiente y se paga al final del crédito, con intereses. Es como pagar el mínimo de una tarjeta: no te saca de la deuda, la difiere.</div>
+    </div>
+  </div>
+
+  <div class="comp-grid">
+    <div class="comp-card verde">
+      <div class="comp-card-titulo">✅ Sin CVS — opción estándar</div>
+      <div class="comp-item">✓ Tasa más baja (verificar condiciones actuales)</div>
+      <div class="comp-item">✓ El banco te presta más monto (hasta 50% más según casos reales)</div>
+      <div class="comp-item">✓ No generás deuda diferida al final</div>
+      <div class="comp-item">✗ La cuota puede subir sin tope si la inflación supera a los salarios</div>
+    </div>
+    <div class="comp-card rojo">
+      <div class="comp-card-titulo">⚠️ Con CVS — tope de cuota</div>
+      <div class="comp-item">✓ La cuota tiene un techo mensual</div>
+      <div class="comp-item">✓ Más seguridad si tu sueldo no sigue a la inflación</div>
+      <div class="comp-item">✗ Tasa más alta (aprox. 8%–8,75% anual)</div>
+      <div class="comp-item">✗ El banco te presta considerablemente menos monto</div>
+      <div class="comp-item">✗ Generás deuda diferida que se paga al final con intereses</div>
+    </div>
+  </div>
+
+  <div class="alert a-rojo">
+    <span class="alert-ico">🔴</span>
+    <div>
+      <div class="alert-titulo">Una vez aceptada la oferta, el CVS no se puede cambiar</div>
+      <div class="alert-body">Es una de las variables que quedan fijas al aceptar la oferta del banco. Cambiarla implica dar de baja la solicitud completa y empezar de nuevo. Pensalo muy bien antes de aceptar.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ETAPA 01 -->
+<div class="seccion" id="etapa1">
+  <div class="sec-header">
+    <span class="sec-num">ETAPA 01</span>
+    <div>
+      <div class="sec-titulo"><strong>Cargar la solicitud</strong></div>
+      <div class="sec-desc">El primer paso. Cargás tu solicitud en el portal Más Hogares, el banco evalúa tu perfil (el "scoring") y, si todo da bien, recibís la preaprobación con un monto estimado. Desde ahí arrancan los 60 días para encontrar tu propiedad.</div>
+    </div>
+  </div>
+
+  <div class="kpi-grid g3">
+    <div class="kpi">
+      <div class="kpi-label">Portal oficial</div>
+      <div class="kpi-val azul" style="font-size:15px"><a href="https://mashogaresconbna.com.ar" target="_blank" style="color:#1F4E79;text-decoration:none">mashogaresconbna.com.ar</a></div>
+      <div class="kpi-note">donde se gestiona todo el trámite</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Desde la preaprobación</div>
+      <div class="kpi-val">60 días</div>
+      <div class="kpi-note">para reservar una propiedad</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Prórroga automática</div>
+      <div class="kpi-val">+15 días</div>
+      <div class="kpi-note">si se vencen los 60 días sin reservar</div>
+    </div>
+  </div>
+
+  <div class="alert a-azul" style="margin-bottom:16px">
+    <span class="alert-ico">🧮</span>
+    <div>
+      <div class="alert-titulo">¿Cuánto te va a costar la cuota?</div>
+      <div class="alert-body">Antes de cargar la solicitud, conviene tener una idea de qué cuota te corresponde según el monto del crédito y el plazo. <a href="https://matiasleiblich.com/simulador-bna/" target="_blank" style="color:#1F4E79;font-weight:600">Usá el simulador de créditos BNA →</a></div>
+    </div>
+  </div>
+
+  <div class="sec-label">Lo que no podés cambiar una vez aceptada la oferta</div>
+  <div class="alert a-rojo" style="margin-bottom:8px">
+    <span class="alert-ico">🔒</span>
+    <div>
+      <div class="alert-titulo">Estas variables quedan fijas al aceptar — modificarlas implica empezar de cero</div>
+      <div class="alert-body">
+        <strong>• Cláusula CVS</strong> (adherir o sacarla)<br>
+        <strong>• Cotitulares / codeudores</strong> (agregar o quitar)<br>
+        <strong>• Plazo del crédito</strong> (cantidad de años)<br>
+        <strong>• Sucursal asignada</strong><br><br>
+        Si ya avanzaste con tasador y escribanía, dar de baja implica volver prácticamente a cero. Si todavía no aceptaste la oferta (estás dentro de las 72 hs), podés dejarla vencer y recargarla con la opción que querés sin dar de baja la solicitud.
+      </div>
+    </div>
+  </div>
+
+  <div class="sep"></div>
+  <div class="sec-label">Tips clave de la etapa</div>
+
+  <div class="alert a-azul" style="margin-bottom:8px">
+    <span class="alert-ico">👥</span>
+    <div>
+      <div class="alert-titulo">¿Vas solo o con codeudor?</div>
+      <div class="alert-body">Definilo antes de cargar la solicitud. Sumar un segundo ingreso puede aumentar considerablemente el monto prestado. Si probaste solo y el monto fue bajo, podés cancelar y rehacer la solicitud sumando a un familiar o pareja.</div>
+    </div>
+  </div>
+
+  <div class="alert a-amarillo" style="margin-bottom:8px">
+    <span class="alert-ico">📄</span>
+    <div>
+      <div class="alert-titulo">Los recibos de sueldo deben mostrar tu fecha de ingreso</div>
+      <div class="alert-body">El sistema la valida automáticamente para evaluar tu antigüedad laboral. Si tu recibo no incluye ese dato, el sistema lo rebota. Solución: pedile a tu empleador un certificado de trabajo que la indique y adjuntalo junto con los recibos.</div>
+    </div>
+  </div>
+
+  <div class="alert a-azul">
+    <span class="alert-ico">⏱️</span>
+    <div>
+      <div class="alert-titulo">Si se vencen los 60 días</div>
+      <div class="alert-body">Suele haber una prórroga de 15 días (en algunos casos automática). Pasado ese plazo, hay que hacer una nueva solicitud. Si tenés toda la documentación cargada puede aprobarse en minutos — pero hay que esperar que la anterior figure como "cancelada/desistida" (generalmente 48 horas).</div>
+    </div>
+  </div>
+</div>
+
+<!-- ETAPA 02 -->
+<div class="seccion seccion-blanca" id="etapa2">
+  <div class="sec-header">
+    <span class="sec-num">ETAPA 02</span>
+    <div>
+      <div class="sec-titulo"><strong>Buscar la propiedad</strong></div>
+      <div class="sec-desc">Arrancaron los 60 días. Esta es la parte más linda — y también la más ansiosa. No es solo enamorarte de un lugar: hay papeles que conviene revisar antes de reservar para no llevarte sorpresas ni perder tiempo valioso del crédito.</div>
+    </div>
+  </div>
+
+  <div class="checklist">
+    <div class="checklist-hdr">📋 Documentación a pedir antes de reservar</div>
+    <div class="checklist-body">
+      <div class="check-item"><span class="check-ico">☐</span>Escritura de la propiedad</div>
+      <div class="check-item"><span class="check-ico">☐</span>Plano de obra actualizado y sellado por el Municipio o Provincia</div>
+      <div class="check-item"><span class="check-ico">☐</span>Reglamento de copropiedad protocolizado (para departamentos)</div>
+      <div class="check-item"><span class="check-ico">☐</span>Estado parcelario / cédula catastral vigente (especialmente en PBA — hubo demoras por paros en ARBA)</div>
+      <div class="check-item"><span class="check-ico">☐</span>Si hay sucesión: declaratoria de herederos y poderes si hay herederos en el exterior</div>
+    </div>
+  </div>
+
+  <div class="alert a-rojo" style="margin-bottom:16px">
+    <span class="alert-ico">⚠️</span>
+    <div>
+      <div class="alert-titulo">Cuidado con las propiedades "apta crédito" sin los papeles en regla</div>
+      <div class="alert-body">Una vez que señaste, dependés de que el vendedor resuelva los pendientes — y los tiempos del crédito siguen corriendo. Es una de las principales causas de demora. Pedí ver todo antes de reservar y no confíes en la palabra.</div>
+    </div>
+  </div>
+
+  <div class="sep"></div>
+  <div class="sec-label">Índices de titularidad — sacalos desde ya</div>
+
+  <div class="alert a-gris" style="margin-bottom:12px">
+    <span class="alert-ico">📑</span>
+    <div>
+      <div class="alert-titulo" style="color:#0b0b0b">¿Qué es el índice de titularidad?</div>
+      <div class="alert-body">Es un informe que certifica que no tenés propiedades a tu nombre en una jurisdicción. Prueba que la operación es para primera (o segunda) vivienda. Sin el índice cargado, no podés avanzar a la etapa de tasación. Conviene sacarlo apenas tenés la preaprobación.</div>
+    </div>
+  </div>
+
+  <table class="tabla" style="margin-bottom:16px">
+    <thead>
+      <tr>
+        <th>Jurisdicción</th>
+        <th>Dónde tramitarlo</th>
+        <th>Urgente (24–48 hs)</th>
+        <th>Simple</th>
+        <th>Vencimiento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="badge b-azul">CABA</span></td>
+        <td><a href="https://informes.dnrpi.jus.gob.ar" target="_blank" style="color:#1a7aff;text-decoration:none">informes.dnrpi.jus.gob.ar</a> (informe N°3)</td>
+        <td>$12.000</td>
+        <td>$3.000</td>
+        <td rowspan="2" style="color:#c0392b;font-size:11px">90–180 días. Si el trámite se extiende, puede pedirse actualización.</td>
+      </tr>
+      <tr>
+        <td><span class="badge b-verde">PBA</span></td>
+        <td><a href="https://rpba.gov.ar/creditos.php" target="_blank" style="color:#1a7aff;text-decoration:none">rpba.gov.ar/creditos.php</a></td>
+        <td>$53.200</td>
+        <td>$20.400</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert a-amarillo">
+    <span class="alert-ico">📍</span>
+    <div>
+      <div class="alert-titulo">¿De qué jurisdicciones necesitás el índice?</div>
+      <div class="alert-body">
+        <strong>Comprás en CABA:</strong> pedí CABA + PBA (los dos).<br>
+        <strong>Comprás en PBA:</strong> pedí PBA + CABA (los dos).<br>
+        <strong>Tu DNI es de otra provincia:</strong> pedí también el de esa provincia.<br><br>
+        El banco pide CABA y PBA juntos aunque parezca redundante. A varios compradores se los pidieron a último momento por mail, fuera del portal, cerca del acuerdo definitivo. No dejes esto para el final.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ETAPA 03 -->
+<div class="seccion" id="etapa3">
+  <div class="sec-header">
+    <span class="sec-num">ETAPA 03</span>
+    <div>
+      <div class="sec-titulo"><strong>La reserva</strong></div>
+      <div class="sec-desc">Encontraste la propiedad, revisaste los papeles y querés avanzar. Lo clave es que la reserva esté bien redactada para protegerte — si el crédito se cae, tenés que poder recuperar tu dinero.</div>
+    </div>
+  </div>
+
+  <div class="checklist">
+    <div class="checklist-hdr">✅ Cláusulas que no pueden faltar en la reserva</div>
+    <div class="checklist-body">
+      <div class="check-item"><span class="check-ico">⭐</span><div><strong>"Ad referéndum del crédito hipotecario BNA"</strong> — si el crédito se cae por cualquier razón, se te devuelve la seña. Es la cláusula más importante.</div></div>
+      <div class="check-item"><span class="check-ico">📅</span><div><strong>Plazo amplio para escriturar</strong> — negociá mínimo 90 días. En la práctica los procesos pueden extenderse.</div></div>
+      <div class="check-item"><span class="check-ico">💰</span><div><strong>Cláusula de gastos</strong> — que quede explícito quién paga qué: "usos y costumbres" (cada parte lo suyo) o "libre de gastos" (el comprador paga todo).</div></div>
+    </div>
+  </div>
+
+  <div class="kpi-grid g3" style="margin-top:16px">
+    <div class="kpi">
+      <div class="kpi-label">Plazo recomendado</div>
+      <div class="kpi-val">90+ días</div>
+      <div class="kpi-note">para escriturar desde la reserva</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Cuando aceptás en el portal</div>
+      <div class="kpi-val verde">Se detiene</div>
+      <div class="kpi-note">el plazo de los 60 días</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Deudas de expensas/servicios</div>
+      <div class="kpi-val azul">No frena</div>
+      <div class="kpi-note">el escribano hace ajuste de cuentas el día de la firma</div>
+    </div>
+  </div>
+
+  <div class="sep"></div>
+  <div class="sec-label">Si comprás por dueño directo (sin inmobiliaria)</div>
+
+  <div class="alert a-azul">
+    <span class="alert-ico">🏠</span>
+    <div>
+      <div class="alert-titulo">El proceso es similar, pero la carga la hacés vos por mail</div>
+      <div class="alert-body">
+        El portal de Más Hogares solo permite cargar propiedades a inmobiliarias registradas. Para dueño directo el camino es por mail: <strong>MASHOGARES@BNA.COM.AR</strong> — con tu DNI y número de solicitud en el asunto, aclarando que es dueño directo.<br><br>
+        Varios compradores no recibieron respuesta al mail pero igual el estado cambió a "Pedido de tasación" en los días siguientes. Si el tasador no se contacta en varios días, escribile directamente al mail que figura en el correo del banco.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ETAPA 04 -->
+<div class="seccion seccion-blanca" id="etapa4">
+  <div class="sec-header">
+    <span class="sec-num">ETAPA 04</span>
+    <div>
+      <div class="sec-titulo"><strong>Tasador y escribanía</strong></div>
+      <div class="sec-desc">Cuando la solicitud pasa a "Pedido de tasación", el banco asigna por sorteo un tasador y un escribano. Entre 5 y 10 días hábiles te llega el mail con sus datos. Acá empieza a tomar forma el monto final y aparecen los primeros gastos.</div>
+    </div>
+  </div>
+
+  <div class="kpi-grid g4">
+    <div class="kpi">
+      <div class="kpi-label">Asignación</div>
+      <div class="kpi-val azul">Por sorteo</div>
+      <div class="kpi-note">no podés elegir tasador ni escribano</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Notificación</div>
+      <div class="kpi-val">5–10 días</div>
+      <div class="kpi-note">hábiles desde el cambio de estado</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Desde tasador hasta monto confirmado</div>
+      <div class="kpi-val">30–45 días</div>
+      <div class="kpi-note">corridos aproximadamente</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Gastos de escritura CABA</div>
+      <div class="kpi-val amarillo">~6–7%</div>
+      <div class="kpi-note">del valor — verificar según operación <a href="https://matiasleiblich.com/calculadora-inmobiliaria" target="_blank" style="color:#1a7aff;text-decoration:none">→ calculadora</a></div>
+    </div>
+  </div>
+
+  <div class="sec-label">La tasación — lo que necesitás saber</div>
+
+  <div class="alert a-azul" style="margin-bottom:8px">
+    <span class="alert-ico">🏗️</span>
+    <div>
+      <div class="alert-titulo">El banco siempre toma el menor valor entre tasación y precio de reserva</div>
+      <div class="alert-body">
+        Si la tasación da <strong>menos</strong> que el precio acordado: el banco presta el 75% de ese valor menor y vos tenés que cubrir la diferencia con ahorros propios.<br>
+        Si la tasación da <strong>más</strong>: igual toma el precio de reserva — no te prestan de más por eso.<br><br>
+        El banco nunca te manda el informe del tasador. Solo te informa el monto final que te va a prestar.
+      </div>
+    </div>
+  </div>
+
+  <div class="alert a-amarillo" style="margin-bottom:16px">
+    <span class="alert-ico">💰</span>
+    <div>
+      <div class="alert-titulo">La escribanía suele pedir un adelanto de gastos</div>
+      <div class="alert-body">Generalmente entre $500.000 y $1.300.000 en concepto de adelanto para el estudio de títulos y certificados. Se descuenta del total el día de la escritura. Pedí siempre un recibo. Muchas escribanías no avanzan sin ese pago.</div>
+    </div>
+  </div>
+
+  <div class="alert a-azul">
+    <span class="alert-ico">🧮</span>
+    <div>
+      <div class="alert-titulo">¿Cuánto van a ser los gastos de escritura?</div>
+      <div class="alert-body">
+        El presupuesto exacto lo da la escribanía el día anterior a la escritura, porque depende del tipo de cambio del dólar de ese día. Como referencia: en CABA los gastos totales rondan el <strong>6–7% del valor de la propiedad</strong>. Las propiedades de primera vivienda tienen exención del impuesto de sellos hasta $226.100.000.<br><br>
+        👉 <a href="https://matiasleiblich.com/calculadora-inmobiliaria" target="_blank" style="color:#1a7aff;font-weight:600">Calculá tus gastos reales en la calculadora inmobiliaria →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ETAPA 05 -->
+<div class="seccion" id="etapa5">
+  <div class="sec-header">
+    <span class="sec-num">ETAPA 05</span>
+    <div>
+      <div class="sec-titulo"><strong>Acuerdo definitivo</strong></div>
+      <div class="sec-desc">Con el informe del tasador y el estudio de títulos en mano, el banco confirma el monto definitivo y genera el acuerdo. Son los últimos pasos antes del gran día.</div>
+    </div>
+  </div>
+
+  <div class="kpi-grid g3">
+    <div class="kpi">
+      <div class="kpi-label">Desde estudio de títulos hasta monto confirmado</div>
+      <div class="kpi-val">~10 días</div>
+      <div class="kpi-note">hábiles aproximadamente</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Monto definitivo vs. preacuerdo</div>
+      <div class="kpi-val azul">Puede variar</div>
+      <div class="kpi-note">por variación del valor UVA entre solicitud y firma</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Cuenta sueldo BNA</div>
+      <div class="kpi-val amarillo">Abrirla ya</div>
+      <div class="kpi-note">necesaria para la tasa preferencial</div>
+    </div>
+  </div>
+
+  <div class="alert a-verde" style="margin-bottom:8px">
+    <span class="alert-ico">🏦</span>
+    <div>
+      <div class="alert-titulo">La cuenta sueldo en BNA es clave para la tasa preferencial</div>
+      <div class="alert-body">Si indicaste que vas a cobrar tus haberes en el BNA, abrí la cuenta cuanto antes — desde la app, la web o en sucursal. La tasa preferencial aplica para quienes acreditan sueldo en el banco. Si no acreditás el sueldo, la tasa puede subir. El grupo de compradores recomienda tener al menos una acreditación antes de ir a firmar.</div>
+    </div>
+  </div>
+
+  <div class="alert a-azul">
+    <span class="alert-ico">👥</span>
+    <div>
+      <div class="alert-titulo">Si tenés codeudores: el banco abre una cuenta conjunta</div>
+      <div class="alert-body">Al confirmar el acuerdo definitivo, el banco abre automáticamente una cuenta conjunta entre todos los titulares del crédito. De esa cuenta se debita cada cuota mensual.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ETAPA 06 -->
+<div class="seccion seccion-blanca" id="etapa6">
+  <div class="sec-header">
+    <span class="sec-num">ETAPA 06</span>
+    <div>
+      <div class="sec-titulo"><strong>La escritura</strong></div>
+      <div class="sec-desc">El gran día. Después de meses de trámites y paciencia, firmás la escritura de tu nuevo hogar.</div>
+    </div>
+  </div>
+
+  <div class="kpi-grid" style="grid-template-columns:repeat(5,1fr)">
+    <div class="kpi">
+      <div class="kpi-label">Duración del acto</div>
+      <div class="kpi-val">~2 horas</div>
+      <div class="kpi-note">el escribano lee la escritura en voz alta</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Lugar del acto</div>
+      <div class="kpi-val azul" style="font-size:16px">Sucursal BNA</div>
+      <div class="kpi-note">la sucursal donde se gestionó el préstamo</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Tipo de cambio</div>
+      <div class="kpi-val azul">Oficial BNA</div>
+      <div class="kpi-note">del momento del acto — puede cambiar hasta el último día</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Primera cuota</div>
+      <div class="kpi-val verde">Mes siguiente</div>
+      <div class="kpi-note">con un proporcional del mes en curso</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Aviso previo para efectivo</div>
+      <div class="kpi-val">48 hs</div>
+      <div class="kpi-note">si el vendedor quiere cobrar en efectivo</div>
+    </div>
+  </div>
+
+  <div class="alert a-amarillo" style="margin-bottom:8px">
+    <span class="alert-ico">💱</span>
+    <div>
+      <div class="alert-titulo">El dólar puede cambiar hasta el último día — tené siempre un margen extra</div>
+      <div class="alert-body">La conversión se hace al dólar oficial BNA del momento de la operación. El presupuesto exacto llega el día anterior a la escritura. Tené siempre un poco de dinero extra por si el dólar sube entre el presupuesto y la firma.</div>
+    </div>
+  </div>
+
+  <div class="alert a-rojo">
+    <span class="alert-ico">⚠️</span>
+    <div>
+      <div class="alert-titulo">Ojo con el dólar MEP antes de la escritura</div>
+      <div class="alert-body">Si operaste dólar MEP y después querés comprar dólar oficial, se activa un bloqueo de 90 días sobre el oficial. Comprar dólar oficial de forma normal no genera restricción. Lo que no podés hacer es "el rulo" (comprar oficial y vender MEP con esos mismos fondos) — eso sí puede bloquearte.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CHECKLIST FINAL -->
+<div class="seccion">
+  <div class="sec-header">
+    <span class="sec-num">CHECKLIST</span>
+    <div>
+      <div class="sec-titulo">Documentación <strong>completa</strong></div>
+      <div class="sec-desc">Todo lo que el banco y la escribanía van a pedirte a lo largo del proceso.</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div class="checklist">
+      <div class="checklist-hdr">👤 Tuya (comprador/a)</div>
+      <div class="checklist-body">
+        <div class="check-item"><span class="check-ico">☐</span>DNI (frente y dorso)</div>
+        <div class="check-item"><span class="check-ico">☐</span>Índice de titularidad CABA y PBA (ambos)</div>
+        <div class="check-item"><span class="check-ico">☐</span>Últimos 3 recibos de sueldo (con fecha de ingreso)</div>
+        <div class="check-item"><span class="check-ico">☐</span>Certificado de trabajo (si el recibo no muestra antigüedad)</div>
+        <div class="check-item"><span class="check-ico">☐</span>Ficha de datos personales (UIF)</div>
+        <div class="check-item"><span class="check-ico">☐</span>Cuenta sueldo en BNA (si aplica)</div>
+      </div>
+    </div>
+    <div class="checklist">
+      <div class="checklist-hdr">🏠 De la propiedad / parte vendedora</div>
+      <div class="checklist-body">
+        <div class="check-item"><span class="check-ico">☐</span>Escritura original (o copia digital)</div>
+        <div class="check-item"><span class="check-ico">☐</span>Plano de obra actualizado y sellado</div>
+        <div class="check-item"><span class="check-ico">☐</span>Estado parcelario / cédula catastral</div>
+        <div class="check-item"><span class="check-ico">☐</span>Reglamento de copropiedad (departamentos)</div>
+        <div class="check-item"><span class="check-ico">☐</span>Boletas de ABL, expensas y servicios</div>
+        <div class="check-item"><span class="check-ico">☐</span>Ficha de datos personales de los vendedores (UIF)</div>
+        <div class="check-item"><span class="check-ico">☐</span>Si hay sucesión: declaratoria de herederos y poderes</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GLOSARIO -->
+<div class="seccion seccion-blanca">
+  <div class="sec-header">
+    <span class="sec-num">GLOSARIO</span>
+    <div>
+      <div class="sec-titulo">Los términos que <strong>vas a escuchar</strong></div>
+      <div class="sec-desc">Un diccionario rápido para no perderte en el proceso.</div>
+    </div>
+  </div>
+  <div class="glosario-grid">
+    <div class="glosario-item">
+      <div class="glosario-term">UVA</div>
+      <div class="glosario-def">Unidad de Valor Adquisitivo. El crédito se da en pesos ajustados por UVA; la cuota y el saldo se actualizan con este índice que sigue a la inflación.</div>
+    </div>
+    <div class="glosario-item">
+      <div class="glosario-term">CVS</div>
+      <div class="glosario-def">Coeficiente de Variación Salarial. Cláusula opcional que pone un tope a la cuota mensual; la diferencia se difiere al final del crédito con intereses.</div>
+    </div>
+    <div class="glosario-item">
+      <div class="glosario-term">Preaprobación / Scoring</div>
+      <div class="glosario-def">Evaluación inicial del banco con la que te aprueba un monto estimado y arrancan los 60 días para buscar propiedad.</div>
+    </div>
+    <div class="glosario-item">
+      <div class="glosario-term">Ad referéndum</div>
+      <div class="glosario-def">Cláusula de la reserva que la condiciona a que salga el crédito. Si el crédito se cae, te devuelven la seña.</div>
+    </div>
+    <div class="glosario-item">
+      <div class="glosario-term">Índice de titularidad</div>
+      <div class="glosario-def">Informe que certifica que no tenés propiedades a tu nombre en una jurisdicción. Prueba que es primera (o segunda) vivienda.</div>
+    </div>
+    <div class="glosario-item">
+      <div class="glosario-term">Estado parcelario / Cédula catastral</div>
+      <div class="glosario-def">Documento que certifica el estado del inmueble en el registro catastral. Lo necesita la escribanía para el estudio de títulos.</div>
+    </div>
+    <div class="glosario-item">
+      <div class="glosario-term">Estudio de títulos</div>
+      <div class="glosario-def">Análisis legal que hace la escribanía sobre la historia de la propiedad para confirmar que está todo en regla.</div>
+    </div>
+    <div class="glosario-item">
+      <div class="glosario-term">Tasación</div>
+      <div class="glosario-def">Valuación del inmueble. El banco presta el 75% del menor valor entre la tasación y el precio de reserva.</div>
+    </div>
+    <div class="glosario-item">
+      <div class="glosario-term">Acuerdo definitivo</div>
+      <div class="glosario-def">Etapa final en la que el banco confirma el monto y genera el contrato del crédito. Es casi lo último en cambiar antes de la escritura.</div>
+    </div>
+    <div class="glosario-item">
+      <div class="glosario-term">Libre de gastos / Usos y costumbres</div>
+      <div class="glosario-def">Formas de repartir los gastos de escritura. "Libre de gastos": paga todo el comprador. "Usos y costumbres": cada parte lo suyo.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACTOS BNA -->
+<div class="seccion">
+  <div class="sec-header">
+    <span class="sec-num">CONTACTOS</span>
+    <div>
+      <div class="sec-titulo">Canales oficiales del <strong>BNA</strong></div>
+      <div class="sec-desc">Dónde ir cuando necesitás resolver algo con el banco.</div>
+    </div>
+  </div>
+  <table class="tabla">
+    <thead>
+      <tr><th>Canal</th><th>Dato</th><th>Para qué sirve</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Portal Más Hogares</strong></td><td>mashogaresconbna.com.ar</td><td>Estado de solicitud, carga de documentación, chat interno.</td></tr>
+      <tr><td><strong>Teléfono Más Hogares</strong></td><td>0810-999-6224</td><td>Consultas directas sobre el trámite hipotecario.</td></tr>
+      <tr><td><strong>Mail Más Hogares</strong></td><td>MASHOGARES@BNA.COM.AR</td><td>Consultas, pedir baja de solicitud, problemas con el portal. Demora entre varios días y una semana.</td></tr>
+      <tr><td><strong>0800 BNA</strong></td><td>0800-666-4444</td><td>Atención general. Útil para dejar reclamos formales con número de seguimiento.</td></tr>
+      <tr><td><strong>Chat del portal</strong></td><td>Dentro del portal</td><td>Varios reportaron respuestas muy rápidas. Vale probarlo antes de llamar al 0800.</td></tr>
+    </tbody>
+  </table>
+  <div class="alert a-amarillo" style="margin-top:14px">
+    <span class="alert-ico">📝</span>
+    <div>
+      <div class="alert-titulo">Tip de oro para reclamos</div>
+      <div class="alert-body">Siempre que llames o vayas al banco, anotá nombre del asesor, fecha, hora y lo que te dijeron. Si después te dan información contradictoria, tenés respaldo para el reclamo formal. El 0800 sirve sobre todo para dejar reclamos con número de seguimiento — la info que dan por teléfono suele ser imprecisa.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  <div>
+    <strong>Matías Leiblich</strong> · Ingeniero Civil · Real Estate
+  </div>
+  <div style="text-align:right;font-size:10px;color:#4b5563">
+    Guía informativa · Condiciones a agosto de 2026 · No constituye asesoramiento legal ni financiero oficial
+  </div>
+</div>
+
+<!-- CONTACTO PAGE -->
+<div class="contacto-page">
+  <div class="contacto-hero">
+    <img src="https://raw.githubusercontent.com/matiasleiblich/informes/main/IMG/Fotoportada.jpg" style="width:100px;height:100px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid #1a7aff55;flex-shrink:0" alt="Matías Leiblich">
+    <div>
+      <div class="contacto-nombre">Matías Leiblich</div>
+      <div class="contacto-titulo">Ingeniero Civil · Real Estate</div>
+      <div class="contacto-bio">Soy Ingeniero Civil (UBA) y asesor en Real Estate. Acompañé compradores en operaciones con crédito hipotecario en CABA y GBA, combinando el análisis técnico del inmueble con el conocimiento del proceso bancario. Si estás por comprar con crédito, puedo ayudarte a entender cada etapa y a no perderte en el camino.</div>
+      <div class="contacto-redes">
+        <a class="red-btn" href="https://wa.me/5491161737552" target="_blank">📱 WhatsApp</a>
+        <a class="red-btn" href="mailto:matiasleiblich@deinmobiliarios.com" target="_blank">✉️ Mail</a>
+        <a class="red-btn" href="https://linkedin.com/in/matias-leiblich" target="_blank">💼 LinkedIn</a>
+        <a class="red-btn" href="https://www.instagram.com/tutemudas" target="_blank">📷 @tutemudas</a>
+        <a class="red-btn" href="https://whatsapp.com/channel/0029VbBiYGGLCoWvqOOv4y1O" target="_blank">📢 Canal WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#4b5a6e;margin-bottom:16px;font-weight:600">Datos de contacto</div>
+  <div class="contacto-contacto">
+    <div class="contacto-dato">
+      <div class="contacto-dato-label">Teléfono / WhatsApp</div>
+      <a class="contacto-dato-val" href="https://wa.me/5491161737552" target="_blank" style="text-decoration:none">11-6173-7552</a>
+    </div>
+    <div class="contacto-dato">
+      <div class="contacto-dato-label">Email</div>
+      <a class="contacto-dato-val" href="mailto:matiasleiblich@deinmobiliarios.com" target="_blank" style="text-decoration:none;font-size:11px">matiasleiblich@deinmobiliarios.com</a>
+    </div>
+    <div class="contacto-dato">
+      <div class="contacto-dato-label">Web</div>
+      <a class="contacto-dato-val" href="https://matiasleiblich.com" target="_blank" style="text-decoration:none">matiasleiblich.com</a>
+    </div>
+  </div>
+
+  <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#4b5a6e;margin-bottom:16px;font-weight:600">¿Cómo puedo ayudarte?</div>
+  <div class="contacto-grid" style="grid-template-columns:repeat(3,1fr)">
+    <div class="contacto-card">
+      <div class="contacto-card-ico">🏠</div>
+      <div class="contacto-card-titulo">¿Comprás con crédito BNA?</div>
+      <div class="contacto-card-desc">Te acompaño en todo el proceso: desde entender qué propiedad podés comprar con tu preaprobación hasta la escritura.</div>
+      <div class="contacto-links">
+        <a class="contacto-link" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Estoy%20por%20comprar%20con%20cr%C3%A9dito%20BNA%20y%20quisiera%20asesoramiento." target="_blank">
+          🏠 Quiero comprar con crédito <span class="contacto-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="contacto-card">
+      <div class="contacto-card-ico">📊</div>
+      <div class="contacto-card-titulo">Simulador de créditos BNA</div>
+      <div class="contacto-card-desc">Calculá cuánto te saldría la cuota según el monto del crédito y el plazo, antes de arrancar el trámite.</div>
+      <div class="contacto-links">
+        <a class="contacto-link" href="https://matiasleiblich.com/simulador-bna/" target="_blank">
+          📊 Ir al simulador <span class="contacto-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="contacto-card">
+      <div class="contacto-card-ico">🧮</div>
+      <div class="contacto-card-titulo">Calculadora de gastos</div>
+      <div class="contacto-card-desc">Calculá los gastos reales de tu operación: sellos, escribanía, comisiones y más.</div>
+      <div class="contacto-links">
+        <a class="contacto-link" href="https://matiasleiblich.com/calculadora-inmobiliaria" target="_blank">
+          🧮 Ir a la calculadora <span class="contacto-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="contacto-card">
+      <div class="contacto-card-ico">🏷️</div>
+      <div class="contacto-card-titulo">¿Cuánto vale tu propiedad?</div>
+      <div class="contacto-card-desc">Obtené una referencia de valor de tu inmueble basada en datos reales del mercado.</div>
+      <div class="contacto-links">
+        <a class="contacto-link" href="https://matiasleiblich.com/simulador/" target="_blank">
+          🏷️ Tasar mi propiedad <span class="contacto-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="contacto-card">
+      <div class="contacto-card-ico">📚</div>
+      <div class="contacto-card-titulo">Más guías y recursos</div>
+      <div class="contacto-card-desc">Biblioteca de informes de mercado, guías para compradores y vendedores.</div>
+      <div class="contacto-links">
+        <a class="contacto-link" href="https://matiasleiblich.com/informes" target="_blank">
+          📊 Ver informes de mercado <span class="contacto-link-arrow">→</span>
+        </a>
+        <a class="contacto-link" href="https://drive.google.com/drive/folders/1el9JGp-ROZrFCmeo2ruf0rJneN-WWf4z?usp=sharing" target="_blank">
+          📖 Biblioteca de guías <span class="contacto-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="contacto-card">
+      <div class="contacto-card-ico">🏘️</div>
+      <div class="contacto-card-titulo">¿Vendés para comprar con crédito?</div>
+      <div class="contacto-card-desc">Una operación encadenada requiere coordinación precisa de tiempos. Te ayudo a planificarla.</div>
+      <div class="contacto-links">
+        <a class="contacto-link" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Quiero%20vender%20para%20comprar%20con%20cr%C3%A9dito%20y%20quisiera%20asesoramiento." target="_blank">
+          📅 Agendar consulta <span class="contacto-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2a3a50;padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+    <div>
+      <div style="font-size:13px;font-weight:700;color:#f0f1f3">Matías Leiblich</div>
+      <div style="font-size:10px;color:#4b5a6e;margin-top:2px">Agosto 2026</div>
+    </div>
+    <div style="font-size:10px;color:#4b5a6e;text-align:right">
+      Guía informativa · Crédito Hipotecario BNA · Condiciones a agosto 2026
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

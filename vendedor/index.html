@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guía del Vendedor — Matías Leiblich</title>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MC47CJF0VL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MC47CJF0VL');
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f4f0;color:#0b0b0b;font-size:13px;line-height:1.6}
+
+/* PORTADA */
+.portada{background:#0d1b2e;color:#fff;padding:0;position:relative;overflow:hidden}
+.portada-img-wrap{position:relative;height:280px}
+.portada-img-wrap img{width:100%;height:280px;object-fit:cover;object-position:center 40%;display:block;opacity:.35;filter:sepia(.3) brightness(.8)}
+.portada-img-wrap::after{content:'';position:absolute;top:0;left:0;right:0;height:280px;background:linear-gradient(to bottom,#0d1b2e 0%,transparent 40%,#0d1b2e 100%)}
+.portada-content{padding:32px 56px 0;position:relative;z-index:2;margin-top:-90px}
+.portada-logo-row{margin-bottom:28px}
+.portada-eyebrow{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#c9a84c;margin-bottom:12px;font-weight:500}
+.portada-titulo{font-size:42px;font-weight:300;color:#f0f1f3;line-height:1.1;margin-bottom:6px}
+.portada-titulo strong{font-weight:700;color:#fff}
+.portada-subtitulo{font-size:14px;color:#9ca3af;margin-bottom:36px;max-width:560px;line-height:1.55}
+.portada-pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid #2a3a50;border-radius:10px;overflow:hidden;margin-bottom:0}
+.portada-paso{padding:14px 16px;border-right:1px solid #2a3a50;text-align:center}
+.portada-paso:last-child{border-right:none}
+.portada-paso-num{font-size:15px;font-weight:700;color:#c9a84c;line-height:1.2}
+.portada-paso-lbl{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin-top:3px;line-height:1.3}
+.portada-footer{padding:24px 56px;border-top:1px solid #2a3a50;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:32px}
+.portada-autor{display:flex;align-items:center;gap:14px}
+.portada-autor-info strong{color:#f0f1f3;font-size:14px;display:block}
+.portada-autor-info span{color:#9ca3af;font-size:11px}
+.portada-tags{display:flex;gap:8px;flex-wrap:wrap}
+.portada-tag{font-size:10px;color:#c9a84c;background:#c9a84c11;padding:4px 12px;border-radius:20px;border:1px solid #c9a84c33}
+
+/* SECCIONES */
+.seccion{padding:36px 56px;border-bottom:1px solid #e1e0d9}
+.seccion:last-child{border-bottom:none}
+.seccion-blanca{background:#fff}
+.sec-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px}
+.sec-num{font-size:11px;font-weight:600;letter-spacing:2px;color:#c9a84c;background:#c9a84c11;padding:4px 10px;border-radius:20px;white-space:nowrap;margin-top:3px;border:1px solid #c9a84c22;flex-shrink:0}
+.sec-titulo{font-size:20px;font-weight:300;color:#0b0b0b;line-height:1.2}
+.sec-titulo strong{font-weight:700}
+.sec-desc{font-size:12px;color:#52514e;margin-top:4px;line-height:1.6}
+
+/* PASOS */
+.paso-item{display:grid;grid-template-columns:56px 1fr;gap:0;border:0.5px solid #e1e0d9;border-radius:8px;overflow:hidden;margin-bottom:8px;background:#fff}
+.paso-num-col{background:#c9a84c;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#fff;padding:16px 0;flex-shrink:0}
+.paso-body{padding:14px 18px}
+.paso-titulo{font-size:13px;font-weight:700;color:#0b0b0b;margin-bottom:3px}
+.paso-desc{font-size:11px;color:#52514e;line-height:1.6}
+
+/* ALERTAS */
+.alert{border-radius:8px;padding:14px 18px;margin-bottom:12px;display:flex;gap:12px;align-items:flex-start}
+.a-azul{background:#e6f1fb;border:0.5px solid #b5d4f4}
+.a-amarillo{background:#fff8e1;border:0.5px solid #f0c040}
+.a-verde{background:#edf7f1;border:0.5px solid #9fd4b6}
+.a-rojo{background:#fdf0f0;border:0.5px solid #e8b4b4}
+.a-gris{background:#f5f4f0;border:0.5px solid #d3d1c7}
+.a-gold{background:#fdf6e3;border:0.5px solid #c9a84c44}
+.alert-ico{font-size:17px;flex-shrink:0;margin-top:1px}
+.alert-titulo{font-size:12px;font-weight:600;margin-bottom:3px}
+.a-azul .alert-titulo{color:#1F4E79}
+.a-amarillo .alert-titulo{color:#7d5a00}
+.a-verde .alert-titulo{color:#1a7a4a}
+.a-rojo .alert-titulo{color:#c0392b}
+.a-gris .alert-titulo{color:#52514e}
+.a-gold .alert-titulo{color:#7d5a00}
+.alert-body{font-size:12px;color:#52514e;line-height:1.65}
+
+/* COLUMNAS */
+.col2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.col3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px}
+
+/* TARJETAS */
+.card{background:#fff;border:0.5px solid #e1e0d9;border-radius:8px;padding:16px 18px}
+.card-titulo{font-size:12px;font-weight:700;color:#0b0b0b;margin-bottom:8px}
+.card-desc{font-size:11px;color:#52514e;line-height:1.6}
+
+/* LISTAS */
+.lista-check{list-style:none;padding:0;margin:0}
+.lista-check li{font-size:12px;color:#52514e;padding:5px 0 5px 22px;position:relative;border-bottom:0.5px solid #f0efea;line-height:1.5}
+.lista-check li:last-child{border-bottom:none}
+.lista-check li::before{content:'✓';position:absolute;left:0;color:#c9a84c;font-weight:700;font-size:11px}
+
+/* COMPARACIÓN exclusiva vs multi */
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:0.5px solid #e1e0d9;border-radius:8px;overflow:hidden;margin-bottom:16px}
+.comp-header{padding:10px 16px;font-size:11px;font-weight:700;text-align:center;text-transform:uppercase;letter-spacing:.5px}
+.comp-h-verde{background:#1a7a4a;color:#fff}
+.comp-h-rojo{background:#c0392b;color:#fff}
+.comp-row{display:contents}
+.comp-cel{padding:9px 16px;font-size:11px;color:#52514e;border-top:0.5px solid #e1e0d9;line-height:1.4}
+.comp-cel-verde{background:#edf7f1}
+.comp-cel-rojo{background:#fdf0f0}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:32px;margin:16px 0}
+.timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,#c9a84c,#1a7aff)}
+.tl-item{position:relative;margin-bottom:16px}
+.tl-item:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:-26px;top:3px;width:12px;height:12px;border-radius:50%;background:#c9a84c;border:2px solid #fff;box-shadow:0 0 0 2px #c9a84c}
+.tl-titulo{font-size:12px;font-weight:700;color:#0b0b0b;margin-bottom:3px}
+.tl-desc{font-size:11px;color:#52514e;line-height:1.6}
+
+/* HOMESTAGING GRID */
+.hsg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:16px}
+.hsg-item{background:#fff;border:0.5px solid #e1e0d9;border-radius:8px;padding:12px 14px}
+.hsg-num{font-size:18px;font-weight:700;color:#c9a84c;margin-bottom:4px;line-height:1}
+.hsg-titulo{font-size:11px;font-weight:700;color:#0b0b0b;margin-bottom:4px}
+.hsg-desc{font-size:11px;color:#52514e;line-height:1.5}
+
+/* TERMÓMETRO VISUALIZACIONES */
+.term-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin:12px 0}
+.term-cel{text-align:center;border-radius:6px;padding:10px 6px}
+.term-rango{font-size:13px;font-weight:700}
+.term-ico{font-size:20px;margin:4px 0}
+.term-lbl{font-size:9px;color:#52514e;line-height:1.3}
+
+/* COMERCIALIZACIÓN */
+.com-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:16px}
+.com-item{background:#fff;border:0.5px solid #e1e0d9;border-radius:8px;padding:12px;text-align:center}
+.com-ico{font-size:24px;margin-bottom:6px}
+.com-lbl{font-size:10px;font-weight:600;color:#52514e;text-transform:uppercase;letter-spacing:.3px}
+
+/* SEMANAS */
+.semana-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.semana-item{background:#fff;border:0.5px solid #e1e0d9;border-radius:8px;padding:12px 16px;display:grid;grid-template-columns:80px 1fr;gap:12px;align-items:start}
+.semana-tag{font-size:10px;font-weight:700;color:#fff;background:#c9a84c;padding:3px 8px;border-radius:4px;text-align:center;align-self:start;margin-top:2px}
+.semana-titulo{font-size:12px;font-weight:700;color:#0b0b0b;margin-bottom:2px}
+.semana-desc{font-size:11px;color:#52514e;line-height:1.5}
+
+/* CONTACTO */
+.contacto-page{background:#0d1b2e;color:#fff;padding:48px 56px}
+.contacto-hero{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;margin-bottom:40px;padding-bottom:36px;border-bottom:1px solid #2a3a50}
+.contacto-nombre{font-size:26px;font-weight:700;color:#fff;margin-bottom:4px}
+.contacto-titulo{font-size:13px;color:#c9a84c;margin-bottom:10px;letter-spacing:.5px}
+.contacto-bio{font-size:12px;color:#9ca3af;line-height:1.7;max-width:540px}
+.contacto-redes{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.red-btn{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:500;padding:7px 14px;border-radius:20px;border:1px solid #2a3a50;color:#9ca3af;text-decoration:none}
+.contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
+.contacto-card{background:#0f2440;border:1px solid #2a3a50;border-radius:10px;padding:18px 20px}
+.contacto-card-ico{font-size:20px;margin-bottom:8px}
+.contacto-card-titulo{font-size:13px;font-weight:600;color:#f0f1f3;margin-bottom:5px}
+.contacto-card-desc{font-size:11px;color:#6b7280;line-height:1.6;margin-bottom:10px}
+.contacto-links{display:flex;flex-direction:column;gap:5px}
+.contacto-link{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;color:#c9a84c;text-decoration:none;padding:6px 12px;background:#c9a84c11;border:1px solid #c9a84c22;border-radius:6px}
+.contacto-link-arrow{font-size:10px;margin-left:auto}
+.contacto-contacto{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:28px}
+.contacto-dato{background:#0f2440;border:1px solid #2a3a50;border-radius:8px;padding:12px 16px}
+.contacto-dato-label{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#4b5a6e;margin-bottom:5px}
+.contacto-dato-val{font-size:12px;font-weight:500;color:#c9a84c}
+
+.sep{height:0.5px;background:#e1e0d9;margin:20px 0}
+.doc-footer{background:#0d1b2e;color:#9ca3af;padding:24px 56px;font-size:11px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.doc-footer strong{color:#f0f1f3}
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="portada">
+  <div class="portada-img-wrap">
+    <img src="https://raw.githubusercontent.com/matiasleiblich/informes/main/IMG/Fotoportada.jpg"
+         onerror="this.src='https://images.unsplash.com/photo-1582407947304-fd86f28f3e20?w=1400&q=80'"
+         alt="Propiedad" style="width:100%;height:280px;object-fit:cover;object-position:center 30%;display:block;opacity:.35;filter:sepia(.3) brightness(.8)">
+  </div>
+  <div class="portada-content">
+    <div class="portada-logo-row">
+      <img src="https://raw.githubusercontent.com/matiasleiblich/informes/main/IMG/logoml.png" alt="Matías Leiblich" style="height:48px;object-fit:contain">
+    </div>
+    <div class="portada-eyebrow">Guía práctica · Real Estate · 2026</div>
+    <div class="portada-titulo">Guía del<br><strong>Vendedor</strong></div>
+    <div class="portada-subtitulo">Todo lo que necesitás saber para vender tu propiedad al mejor precio y en el menor tiempo posible: tasación, preparación, comercialización y cierre.</div>
+    <div class="portada-pasos">
+      <div class="portada-paso"><div class="portada-paso-num">8</div><div class="portada-paso-lbl">Etapas del proceso</div></div>
+      <div class="portada-paso"><div class="portada-paso-num">Precio</div><div class="portada-paso-lbl">Variable clave #1</div></div>
+      <div class="portada-paso"><div class="portada-paso-num">Comercialización</div><div class="portada-paso-lbl">Variable clave #2</div></div>
+      <div class="portada-paso"><div class="portada-paso-num">Exclusividad</div><div class="portada-paso-lbl">Mejor estrategia</div></div>
+    </div>
+  </div>
+  <div class="portada-footer">
+    <div class="portada-autor">
+      <img src="https://raw.githubusercontent.com/matiasleiblich/informes/main/IMG/Fotoportada.jpg" style="width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid #c9a84c55;flex-shrink:0">
+      <div class="portada-autor-info">
+        <strong>Matías Leiblich</strong>
+        <span>Ingeniero Civil · Real Estate</span>
+      </div>
+    </div>
+    <div class="portada-tags">
+      <span class="portada-tag">#GuíaDelVendedor</span>
+      <span class="portada-tag">#RealEstate</span>
+      <span class="portada-tag">#matiasleiblich.com</span>
+    </div>
+  </div>
+</div>
+
+<!-- 01: PROCESO -->
+<div class="seccion seccion-blanca">
+  <div class="sec-header">
+    <span class="sec-num">01</span>
+    <div>
+      <div class="sec-titulo">El proceso de venta de <strong>principio a fin</strong></div>
+      <div class="sec-desc">Vender una propiedad bien requiere planificación. Cada etapa cumple un objetivo específico — saltear alguna suele costar tiempo y dinero.</div>
+    </div>
+  </div>
+  <div>
+    <div class="paso-item"><div class="paso-num-col">1</div><div class="paso-body"><div class="paso-titulo">Visita de pre-tasación</div><div class="paso-desc">El asesor visita la propiedad, la relevó en detalle, toma medidas y recopila la documentación necesaria para elaborar la tasación. Es el punto de partida formal del proceso.</div></div></div>
+    <div class="paso-item"><div class="paso-num-col">2</div><div class="paso-body"><div class="paso-titulo">Informe de tasación</div><div class="paso-desc">Se entrega un informe con el análisis del mercado, comparables de cierre, análisis FODA de la propiedad y la estrategia de precio recomendada. La tasación correcta es la decisión más importante de todo el proceso.</div></div></div>
+    <div class="paso-item"><div class="paso-num-col">3</div><div class="paso-body"><div class="paso-titulo">Preparación: documentación</div><div class="paso-desc">Se firman la autorización de venta y la documentación de la propiedad. Se solicitan los informes de dominio e inhibición. Se coordina el relevamiento multimedia.</div></div></div>
+    <div class="paso-item"><div class="paso-num-col">4</div><div class="paso-body"><div class="paso-titulo">Relevamiento y publicación</div><div class="paso-desc">Fotos profesionales, video, tour virtual 360° y plano. Con el material listo, se arman las publicaciones y la propiedad sale al mercado.</div></div></div>
+    <div class="paso-item"><div class="paso-num-col">5</div><div class="paso-body"><div class="paso-titulo">Visitas (muestreo)</div><div class="paso-desc">El asesor pre-califica a los interesados para asegurar que cada visita sea con un potencial comprador real. Se gestionan los días y horarios de muestra.</div></div></div>
+    <div class="paso-item"><div class="paso-num-col">6</div><div class="paso-body"><div class="paso-titulo">Negociación</div><div class="paso-desc">Cuando llega una oferta, comienza la negociación. El precio es solo una variable — también se negocian forma de pago, plazo, posesión y lugar de firma.</div></div></div>
+    <div class="paso-item"><div class="paso-num-col">7</div><div class="paso-body"><div class="paso-titulo">Reserva, refuerzo y boleto</div><div class="paso-desc">Se firma la reserva, se realiza la negociación y, una vez acordadas todas las condiciones, se firma el refuerzo (5%). Puede haber boleto de compraventa previo a la escritura.</div></div></div>
+    <div class="paso-item" style="background:#0d1b2e"><div class="paso-num-col" style="background:#c9a84c">8</div><div class="paso-body" style="background:#0d1b2e"><div class="paso-titulo" style="color:#fff">Escritura y post-venta</div><div class="paso-desc" style="color:#9ca3af">El escribano instrumenta la transmisión del dominio. El asesor acompaña hasta la firma y cierra el proceso con un seguimiento post-venta.</div></div></div>
+  </div>
+</div>
+
+<!-- 02: TASACIÓN -->
+<div class="seccion">
+  <div class="sec-header">
+    <span class="sec-num">02</span>
+    <div>
+      <div class="sec-titulo">La decisión más importante: <strong>el precio</strong></div>
+      <div class="sec-desc">El precio de entrada define el resultado de la venta. Una tasación correcta se basa en datos reales de cierre — no en el precio publicado por vecinos que tampoco se venden.</div>
+    </div>
+  </div>
+  <div class="col2">
+    <div>
+      <div class="card" style="margin-bottom:10px">
+        <div class="card-titulo">📊 Qué incluye una tasación seria</div>
+        <ul class="lista-check" style="margin-top:8px">
+          <li>Análisis del mercado activo en el radio de la propiedad</li>
+          <li><strong>Precios de cierre reales</strong> de propiedades comparables (no publicados)</li>
+          <li>Análisis FODA: fortalezas, oportunidades, debilidades y amenazas</li>
+          <li>Análisis de la competencia directa activa</li>
+          <li>Estrategia de precio recomendada para el tiempo de venta buscado</li>
+        </ul>
+      </div>
+      <div class="alert a-rojo" style="margin-bottom:0">
+        <span class="alert-ico">⚠️</span>
+        <div>
+          <div class="alert-titulo">El precio publicado ≠ precio de mercado</div>
+          <div class="alert-body">Tasar usando como referencia el precio de avisos activos en el portal es un error frecuente y costoso. Una propiedad publicada en USD X no vale X — si no se vendió, el precio es incorrecto. Solo los precios de cierre son datos válidos.</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="card-titulo">⏱ El costo de entrar fuera de precio</div>
+        <div style="margin-top:12px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+            <div style="width:28px;height:28px;border-radius:50%;background:#1a7a4a;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;flex-shrink:0">✓</div>
+            <div><div style="font-size:11px;font-weight:700;color:#1a7a4a">Precio correcto desde el inicio</div><div style="font-size:11px;color:#52514e">Alta demanda, menos negociación, venta más rápida. El anuncio no se "quema".</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+            <div style="width:28px;height:28px;border-radius:50%;background:#f28e2b;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;flex-shrink:0">~</div>
+            <div><div style="font-size:11px;font-weight:700;color:#7d5a00">Levemente por encima (5–10%)</div><div style="font-size:11px;color:#52514e">Menos consultas, más tiempo en el mercado. Eventuales bajas de precio.</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:28px;height:28px;border-radius:50%;background:#c0392b;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;flex-shrink:0">✗</div>
+            <div><div style="font-size:11px;font-weight:700;color:#c0392b">Muy por encima del mercado</div><div style="font-size:11px;color:#52514e">El aviso se quema, el comprador lo lee como "algo que no puede venderse". La bajada de precio post-quema cierra a un valor menor que si hubiera entrado bien.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="alert a-gold">
+    <span class="alert-ico">⭐</span>
+    <div>
+      <div class="alert-titulo">El informe de tasación se entrega y explica en persona</div>
+      <div class="alert-body">Una tasación no es un número — es un análisis. La reunión de entrega (presencial o virtual) sirve para entender el mercado, comparar la propiedad con la competencia real y definir la estrategia de precio. Es el momento más importante antes de salir a la venta.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 03: EXCLUSIVIDAD -->
+<div class="seccion seccion-blanca">
+  <div class="sec-header">
+    <span class="sec-num">03</span>
+    <div>
+      <div class="sec-titulo">Exclusividad vs. <strong>multi-publicación</strong></div>
+      <div class="sec-desc">Publicar en más inmobiliarias no acelera la venta — los datos muestran exactamente lo contrario.</div>
+    </div>
+  </div>
+  <div class="col2" style="margin-bottom:16px">
+    <div class="card">
+      <div class="card-titulo" style="color:#1a7a4a">✓ Con exclusividad</div>
+      <div class="card-desc" style="margin-bottom:8px">La inmobiliaria tiene incentivo real para invertir: fotos y video profesional, tour virtual 360°, plano, publicidad paga y seguimiento activo de consultas.</div>
+      <div class="card-desc" style="margin-bottom:8px">Hay un único precio, un único interlocutor y una estrategia comercial coherente.</div>
+      <div style="margin-top:12px;text-align:center">
+        <div style="font-size:28px;font-weight:700;color:#1a7a4a">~84 días</div>
+        <div style="font-size:11px;color:#898781">mediana de tiempo en el mercado</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-titulo" style="color:#c0392b">✗ Multi-publicada</div>
+      <div class="card-desc" style="margin-bottom:8px">Ninguna inmobiliaria invierte porque no tiene certeza de cobrar la comisión. La propiedad suele tener presentaciones distintas y precios diferentes.</div>
+      <div class="card-desc" style="margin-bottom:8px">El comprador ve la misma propiedad varias veces y la empieza a leer como "algo que nadie puede vender".</div>
+      <div style="margin-top:12px;text-align:center">
+        <div style="font-size:28px;font-weight:700;color:#c0392b">~137 días</div>
+        <div style="font-size:11px;color:#898781">mediana de tiempo en el mercado</div>
+      </div>
+    </div>
+  </div>
+  <div class="alert a-rojo">
+    <span class="alert-ico">📊</span>
+    <div>
+      <div class="alert-titulo">Las propiedades multi-publicadas llevan un 63% más de tiempo en el mercado</div>
+      <div class="alert-body">El análisis del mercado local muestra que las propiedades con exclusividad se venden en un 63% menos de tiempo que las multi-publicadas — con visualizaciones prácticamente iguales. La diferencia no es la exposición: es la calidad del trabajo detrás de cada aviso.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 04: PREPARACIÓN -->
+<div class="seccion">
+  <div class="sec-header">
+    <span class="sec-num">04</span>
+    <div>
+      <div class="sec-titulo">Preparación: <strong>documentación y relevamiento</strong></div>
+      <div class="sec-desc">Antes de publicar, hay que tener todo listo. La documentación en orden genera confianza en el comprador y acelera el cierre.</div>
+    </div>
+  </div>
+  <div class="col2">
+    <div>
+      <div class="card" style="margin-bottom:10px">
+        <div class="card-titulo">📋 Documentación necesaria</div>
+        <ul class="lista-check" style="margin-top:8px">
+          <li>Escritura original</li>
+          <li>DNI de los propietarios</li>
+          <li>Copia de poder (si corresponde)</li>
+          <li>Declaratoria de herederos inscripta (si hay sucesión)</li>
+          <li>Reglamento de copropiedad</li>
+          <li>Últimas liquidaciones de expensas (ordinarias y extraordinarias)</li>
+          <li>Boletas de AySA y ABL</li>
+          <li>Informe de dominio e inhibición (los solicita el corredor)</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="card-titulo">📸 El relevamiento multimedia</div>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-titulo">Fotos profesionales</div><div class="tl-desc">Día soleado, al mejor horario de luz de la propiedad. Son el primer impacto visual del aviso.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-titulo">Video</div><div class="tl-desc">Recorrida completa que da contexto y transmite la escala real de cada ambiente.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-titulo">Tour virtual 360°</div><div class="tl-desc">Permite al comprador recorrer la propiedad de forma autónoma antes de pedir visita.</div></div>
+          <div class="tl-item"><div class="tl-dot" style="background:#1a7a4a;box-shadow:0 0 0 2px #1a7a4a"></div><div class="tl-titulo">Plano</div><div class="tl-desc">Da certeza sobre la distribución y los metros reales. Genera confianza en el comprador.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 05: HOMESTAGING -->
+<div class="seccion seccion-blanca">
+  <div class="sec-header">
+    <span class="sec-num">05</span>
+    <div>
+      <div class="sec-titulo"><strong>Home staging</strong>: preparar la propiedad para vender</div>
+      <div class="sec-desc">La presentación de la propiedad influye directamente en el interés que genera y en el precio que el comprador está dispuesto a pagar.</div>
+    </div>
+  </div>
+  <div class="hsg-grid">
+    <div class="hsg-item">
+      <div class="hsg-num">1</div>
+      <div class="hsg-titulo">Iluminar</div>
+      <div class="hsg-desc">Abrir todas las persianas y cortinas. Encender todas las luces — lámparas de la mayor potencia posible, preferentemente luz cálida. Las canillas que gotean transmiten descuido: verificá la grifería.</div>
+    </div>
+    <div class="hsg-item">
+      <div class="hsg-num">2</div>
+      <div class="hsg-titulo">Limpieza y orden</div>
+      <div class="hsg-desc">Aspirar al minimalismo. Cada ambiente debe tener lo indispensable para que el comprador pueda imaginarse viviendo en él. Un espacio limpio y despejado siempre parece más amplio.</div>
+    </div>
+    <div class="hsg-item">
+      <div class="hsg-num">3</div>
+      <div class="hsg-titulo">Reparar</div>
+      <div class="hsg-desc">Aceitar puertas, ventanas y cerraduras. Dar una mano de pintura a los ambientes más desgastados (blanco es siempre la mejor opción). Revisar cajones y alacenas.</div>
+    </div>
+    <div class="hsg-item">
+      <div class="hsg-num">4</div>
+      <div class="hsg-titulo">Despersonalizar</div>
+      <div class="hsg-desc">Guardar cuadros y fotos personales durante las visitas. Los armarios deben estar ordenados — revelan su capacidad real. Menos objetos personales = más fácil proyectarse viviendo ahí.</div>
+    </div>
+  </div>
+  <div class="alert a-gold">
+    <span class="alert-ico">💡</span>
+    <div>
+      <div class="alert-titulo">Checklist rápido por ambiente</div>
+      <div class="alert-body">
+        <strong>Living/comedor:</strong> despejar mesas y superficies, guardar controles remotos y adornos pequeños.<br>
+        <strong>Dormitorios:</strong> tender las camas con ropa clara, despejar mesas de luz, guardar ropa y calzado.<br>
+        <strong>Baños:</strong> guardar productos de aseo, quitar toallas y alfombras, limpiar vidrios y espejos.<br>
+        <strong>Cocina:</strong> despejar mesadas, guardar electrodomésticos pequeños, descolgar utensilios de paredes.<br>
+        <strong>Balcones y patios:</strong> descolgar ropa, ordenar elementos de limpieza, despejar macetas y objetos.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 06: COMERCIALIZACIÓN -->
+<div class="seccion">
+  <div class="sec-header">
+    <span class="sec-num">06</span>
+    <div>
+      <div class="sec-titulo"><strong>Comercialización</strong>: visibilidad y acciones proactivas</div>
+      <div class="sec-desc">Publicar en portales es el punto de partida, no el final de la estrategia. La comercialización activa marca la diferencia entre una propiedad que se vende y una que acumula días.</div>
+    </div>
+  </div>
+  <div class="com-grid">
+    <div class="com-item"><div class="com-ico">📸</div><div class="com-lbl">Fotos profesionales</div></div>
+    <div class="com-item"><div class="com-ico">🎥</div><div class="com-lbl">Video</div></div>
+    <div class="com-item"><div class="com-ico">🔄</div><div class="com-lbl">Tour 360°</div></div>
+    <div class="com-item"><div class="com-ico">📐</div><div class="com-lbl">Plano</div></div>
+    <div class="com-item"><div class="com-ico">⭐</div><div class="com-lbl">Publicidad paga</div></div>
+  </div>
+  <div class="semana-grid">
+    <div class="semana-item">
+      <div class="semana-tag">Semana 1</div>
+      <div>
+        <div class="semana-titulo">Súper exposición del anuncio</div>
+        <div class="semana-desc">La propiedad se difunde a toda la red de contactos para alcanzar la mayor cantidad de potenciales interesados en el primer momento — cuando es novedad del mercado.</div>
+      </div>
+    </div>
+    <div class="semana-item">
+      <div class="semana-tag">Semana 2</div>
+      <div>
+        <div class="semana-titulo">Búsqueda de aliados estratégicos</div>
+        <div class="semana-desc">Se identifican propiedades similares con posibilidad de venta real y se contacta a las inmobiliarias responsables para ofrecer tu propiedad a compradores que se interesaron en inmuebles comparables. En caso de cierre, se comparte la comisión con el colega que aportó el comprador.</div>
+      </div>
+    </div>
+    <div class="semana-item">
+      <div class="semana-tag">Semana 3</div>
+      <div>
+        <div class="semana-titulo">Difusión en canales digitales adicionales</div>
+        <div class="semana-desc">Publicación en Facebook Marketplace y grupos barriales segmentados por ubicación. Cada actualización de precio o modificación del aviso se re-publica para ganar posición en los resultados.</div>
+      </div>
+    </div>
+  </div>
+  <div class="alert a-azul">
+    <span class="alert-ico">📊</span>
+    <div>
+      <div class="alert-titulo">Termómetro de visualizaciones: el indicador más honesto</div>
+      <div class="alert-body">
+        Las visualizaciones del aviso en los primeros 30 días son la señal más directa de si la propiedad está bien posicionada. Un referente saludable es <strong>al menos 20 visualizaciones por día</strong> para poder cerrar en menos de 60 días.<br><br>
+        <strong>0–9 vis/día:</strong> señal de alarma — precio o presentación fuera de mercado &nbsp;|&nbsp; <strong>10–13:</strong> por debajo de lo esperado &nbsp;|&nbsp; <strong>14–22:</strong> zona de transición &nbsp;|&nbsp; <strong>23–27:</strong> buen rendimiento &nbsp;|&nbsp; <strong>+28:</strong> alta demanda
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 07: SEGUIMIENTO Y NEGOCIACIÓN -->
+<div class="seccion seccion-blanca">
+  <div class="sec-header">
+    <span class="sec-num">07</span>
+    <div>
+      <div class="sec-titulo">Seguimiento y <strong>negociación</strong></div>
+      <div class="sec-desc">El proceso no termina con la publicación. El seguimiento activo y la gestión profesional de cada oferta determinan el resultado final.</div>
+    </div>
+  </div>
+  <div class="col2">
+    <div>
+      <div class="card" style="margin-bottom:10px">
+        <div class="card-titulo">📋 Informes de seguimiento cada 21 días</div>
+        <div class="card-desc" style="margin-bottom:8px">Cada tres semanas recibís un reporte que incluye:</div>
+        <ul class="lista-check">
+          <li>Performance del aviso (visualizaciones, consultas, visitas)</li>
+          <li>Métricas de la comercialización</li>
+          <li>Opiniones de los potenciales compradores que visitaron</li>
+          <li>Análisis de nuevos competidores y cierres en la zona</li>
+          <li>Cambios en el mercado y ajuste de estrategia si corresponde</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="card-titulo">🤝 Las variables de la negociación</div>
+        <div class="card-desc" style="margin-bottom:10px">Cuando llegue una oferta, el precio no es lo único a negociar:</div>
+        <ul class="lista-check">
+          <li><strong>Precio y moneda</strong> — lo más discutido</li>
+          <li><strong>Forma de pago</strong> — efectivo, transferencia, % antes de la escritura</li>
+          <li><strong>Plazo de escritura</strong> — fecha tentativa acordada por ambas partes</li>
+          <li><strong>Posesión</strong> — al momento de la escritura o antes (con boleto al ~70%)</li>
+          <li><strong>Lugar de firma</strong> — en general lo elige el vendedor</li>
+          <li><strong>Inventario</strong> — qué queda y qué se lleva</li>
+          <li><strong>Impuesto de sellos</strong> — en general se paga 50/50</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="alert a-verde" style="margin-bottom:12px">
+    <span class="alert-ico">🧮</span>
+    <div>
+      <div class="alert-titulo">Calculá los gastos a la hora de vender</div>
+      <div class="alert-body">Como vendedor también tenés gastos en la operación: principalmente la comisión inmobiliaria y el impuesto a la transferencia (si aplica). Usá la calculadora para estimarlos antes de acordar el precio final.<br><br>
+        <a href="https://matiasleiblich.com/calculadora-inmobiliaria" target="_blank" style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;color:#1a7a4a;text-decoration:none;padding:7px 14px;background:#edf7f1;border:0.5px solid #9fd4b6;border-radius:6px;margin-top:4px">🧮 Calculadora inmobiliaria → matiasleiblich.com/calculadora-inmobiliaria</a>
+      </div>
+    </div>
+  </div>
+  <div class="alert a-gold">
+    <span class="alert-ico">⭐</span>
+    <div>
+      <div class="alert-titulo">El proceso de la reserva — desde el vendedor</div>
+      <div class="alert-body">
+        <strong>Reserva:</strong> el comprador entrega el 1% del precio. Tenés 4 días corridos para responder por sí o por no. En ese plazo se negocian todas las variables.<br><br>
+        <strong>Aceptación y refuerzo:</strong> si aceptás, el comprador entrega el 5% del precio acordado como refuerzo. Ese monto lo retiene el martillero hasta la escritura. Si alguna de las partes se arrepiente, pierde lo entregado y debe hacerse cargo de los honorarios inmobiliarios.<br><br>
+        <strong>Escritura:</strong> el escribano designado por el comprador realiza el estudio de títulos e instrumenta la transmisión del dominio.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 08: DÍA DE LA ESCRITURA -->
+<div class="seccion">
+  <div class="sec-header">
+    <span class="sec-num">08</span>
+    <div>
+      <div class="sec-titulo">El día de la <strong>escritura</strong></div>
+      <div class="sec-desc">El cierre del proceso. Con la preparación correcta, el día de la firma es el más tranquilo de todo el proceso.</div>
+    </div>
+  </div>
+  <div class="col2">
+    <div class="card">
+      <div class="card-titulo">📋 Qué llevás el día de la firma</div>
+      <ul class="lista-check" style="margin-top:8px">
+        <li>Escritura original (si no la entregaste antes en la escribanía)</li>
+        <li>DNI de los propietarios y de sus cónyuges</li>
+        <li>Llaves de la propiedad</li>
+        <li>Últimas facturas y comprobantes de pago de todos los servicios</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-titulo">💡 Tips para el día</div>
+      <div class="card-desc" style="margin-bottom:8px">Si vas a recibir una cantidad importante en efectivo, considerá utilizar una empresa verificadora de billetes. La pequeña comisión que cobran da certeza sobre la autenticidad y hace el proceso más tranquilo para ambas partes.</div>
+      <div class="card-desc">La escritura traslativa de dominio es el único instrumento que transmite la propiedad. Una vez firmada y ante escribano, la operación está perfeccionada.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PÁGINA CONTACTO -->
+<div class="contacto-page">
+  <div class="contacto-hero">
+    <img src="https://raw.githubusercontent.com/matiasleiblich/informes/main/IMG/Fotoportada.jpg" style="width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid #c9a84c55;flex-shrink:0">
+    <div>
+      <div class="contacto-nombre">Matías Leiblich</div>
+      <div class="contacto-titulo">Ingeniero Civil · Real Estate</div>
+      <div class="contacto-bio">Soy Ingeniero Civil (UBA) y asesor en Real Estate. Mi diferencial es el análisis técnico y de datos: tasaciones basadas en precios reales de cierre, informes de mercado propios y una estrategia de comercialización que combina metodología con trabajo activo. Acompaño al vendedor desde la tasación hasta la firma de la escritura.</div>
+      <div class="contacto-redes">
+        <a class="red-btn" href="https://wa.me/5491161737552" target="_blank">📱 WhatsApp</a>
+        <a class="red-btn" href="mailto:matiasleiblich@deinmobiliarios.com" target="_blank">✉️ Mail</a>
+        <a class="red-btn" href="https://linkedin.com/in/matias-leiblich" target="_blank">💼 LinkedIn</a>
+        <a class="red-btn" href="https://www.instagram.com/tutemudas" target="_blank">📷 @tutemudas</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#4b5a6e;margin-bottom:14px;font-weight:600">Datos de contacto</div>
+  <div class="contacto-contacto">
+    <div class="contacto-dato">
+      <div class="contacto-dato-label">Teléfono / WhatsApp</div>
+      <a class="contacto-dato-val" href="https://wa.me/5491161737552" target="_blank" style="text-decoration:none">11-6173-7552</a>
+    </div>
+    <div class="contacto-dato">
+      <div class="contacto-dato-label">Email</div>
+      <a class="contacto-dato-val" href="mailto:matiasleiblich@deinmobiliarios.com" target="_blank" style="text-decoration:none;font-size:11px">matiasleiblich@deinmobiliarios.com</a>
+    </div>
+    <div class="contacto-dato">
+      <div class="contacto-dato-label">Web</div>
+      <a class="contacto-dato-val" href="https://matiasleiblich.com" target="_blank" style="text-decoration:none">matiasleiblich.com</a>
+    </div>
+  </div>
+
+  <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#4b5a6e;margin-bottom:14px;font-weight:600">¿Cómo puedo ayudarte?</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:28px">
+    <div class="contacto-card">
+      <div class="contacto-card-ico">💰</div>
+      <div class="contacto-card-titulo">Tasación de tu propiedad</div>
+      <div class="contacto-card-desc">Tasación basada en datos reales de cierre, no en precios publicados. Incluye informe de mercado, análisis FODA y estrategia de precio.</div>
+      <div class="contacto-links">
+        <a class="contacto-link" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Quisiera%20una%20tasaci%C3%B3n%20de%20mi%20propiedad." target="_blank">
+          💰 Solicitar tasación <span class="contacto-link-arrow">→</span>
+        </a>
+        <a class="contacto-link" href="https://matiasleiblich.com/tasador" target="_blank">
+          📋 Tasador online <span class="contacto-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="contacto-card">
+      <div class="contacto-card-ico">📊</div>
+      <div class="contacto-card-titulo">Informes de mercado</div>
+      <div class="contacto-card-desc">Análisis actualizados de precios, tiempo en el mercado y oferta activa por zona para que entiendas el contexto en el que estás vendiendo.</div>
+      <div class="contacto-links">
+        <a class="contacto-link" href="https://matiasleiblich.com/informes" target="_blank">
+          📊 Ver informes de mercado <span class="contacto-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="contacto-card">
+      <div class="contacto-card-ico">🧮</div>
+      <div class="contacto-card-titulo">Calculadora inmobiliaria</div>
+      <div class="contacto-card-desc">Estimá los gastos de la operación — comisión, escribanía, sellos y gastos escriturarios — tanto para CABA como para GBA.</div>
+      <div class="contacto-links">
+        <a class="contacto-link" href="https://matiasleiblich.com/calculadora-inmobiliaria" target="_blank">
+          🧮 Abrir calculadora <span class="contacto-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="contacto-card">
+      <div class="contacto-card-ico">📐</div>
+      <div class="contacto-card-titulo">Análisis de prefactibilidad</div>
+      <div class="contacto-card-desc">Si tenés un lote o querés analizar el potencial constructivo de tu propiedad antes de vender, podés solicitar un análisis de indicadores urbanísticos.</div>
+      <div class="contacto-links">
+        <a class="contacto-link" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Quisiera%20consultar%20por%20un%20an%C3%A1lisis%20de%20prefactibilidad." target="_blank">
+          📐 Solicitar análisis <span class="contacto-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="contacto-card">
+      <div class="contacto-card-ico">🏘</div>
+      <div class="contacto-card-titulo">Cartera de propiedades</div>
+      <div class="contacto-card-desc">Propiedades activas con análisis de mercado y posicionamiento real. Para compradores que quieren ver opciones bien valuadas.</div>
+      <div class="contacto-links">
+        <a class="contacto-link" href="https://matiasleiblich.com/cartera" target="_blank">
+          🏘 Ver cartera <span class="contacto-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="contacto-card">
+      <div class="contacto-card-ico">📅</div>
+      <div class="contacto-card-titulo">Agendar una reunión</div>
+      <div class="contacto-card-desc">Coordiná una reunión presencial o virtual para analizar tu situación y definir el mejor camino para tu operación.</div>
+      <div class="contacto-links">
+        <a class="contacto-link" href="https://wa.me/5491161737552?text=Hola%20Matias.%20Quisiera%20coordinar%20una%20reuni%C3%B3n." target="_blank">
+          📅 Coordinar reunión <span class="contacto-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #2a3a50;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+    <div>
+      <div style="font-size:13px;font-weight:700;color:#f0f1f3">Matías Leiblich</div>
+      <div style="font-size:10px;color:#4b5a6e;margin-top:2px">Guía del Vendedor · 2026</div>
+    </div>
+    <div style="font-size:10px;color:#4b5a6e;text-align:right">matiasleiblich.com</div>
+  </div>
+</div>
+
+<div class="doc-footer">
+  <div><strong>Matías Leiblich</strong> · Ingeniero Civil · Real Estate · matiasleiblich.com</div>
+  <div style="text-align:right;font-size:10px;color:#4b5563">Guía del Vendedor · 2026 · Información orientativa — consultá a tu escribano ante cualquier duda legal</div>
+</div>
+
+</body>
+</html>
